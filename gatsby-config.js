@@ -62,6 +62,21 @@ module.exports = {
     },
     `gatsby-plugin-top-layout`,
     {
+      resolve: `gatsby-theme-material-ui`,
+      options: {
+        webFontsConfig: {
+          fonts: {
+            google: [
+              {
+                family: `Montserrat`,
+                variants: [`500`, `700`],
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-material-ui`,
       options: {
         stylesProvider: {
