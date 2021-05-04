@@ -1,9 +1,13 @@
 import React, { ReactElement } from "react";
-import { DefaultTheme, ThemeProvider } from "styled-components";
+import {
+  DefaultTheme,
+  ThemeProvider as StyledTheme,
+} from "styled-components";
 import { useSelector } from "react-redux";
 
 import { RootState } from "../stores/store";
 import defaultTheme from "../themes/defaultTheme";
+import { ThemeProvider } from "@material-ui/styles";
 
 /**
  * THEME WRAPPER
@@ -32,7 +36,11 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
     ...defaultTheme,
     mode,
   };
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledTheme theme={theme}>{children}</StyledTheme>
+    </ThemeProvider>
+  );
 };
 
 export default ThemeWrapper;
