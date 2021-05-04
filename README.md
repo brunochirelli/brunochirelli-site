@@ -1,16 +1,21 @@
-# Bruno Chirelli official website
+# [PROJECT NAME]
 
-## About
+## Objetivos do projeto
 
-Bruno Chirelli is advertiser, designer and developer specialist in search engine marketing.
+## Resultado esperado
 
-The official website are hosted in [brunochirelli.com.br](https://brunochirelli.com.br).
+## Concorrência
 
-## Stack
+Sites concorrentes para se manter no escopo da equipe de desenvolvimento.
 
--   [React](https://github.com/facebook/react)
--   [GatsbyJS](https://github.com/gatsbyjs/gatsby) as website generator.
--   [DatoCMS](https://github.com/datocms) as CMS.
--   [Yarn](https://yarnpkg.com/) as package manager.
--   [Netlify](https://netlify.com/) as server.
--   [Google Analytics](https://analytics.google.com/analytics/web/) as analytics tool.
+# Features
+
+# Scripts
+
+## develop
+
+## lint
+
+## build
+
+# Licença

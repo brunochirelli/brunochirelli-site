@@ -1,11 +1,6 @@
-import { wrapPageElement as wrap } from './root-wrapper';
+import React from "react";
+import Wrapper from "./src/components/Wrapper";
 
-(async function() {
-    if (!('scrollBehavior' in document.documentElement.style)) {
-        await import('scroll-behavior-polyfill');
-    }
-})();
-
-export const wrapPageElement = wrap;
-
-export const onClientEntry = () => {};
+export const wrapRootElement = ({ element }) => (
+  <Wrapper>{element}</Wrapper>
+);
