@@ -1,5 +1,7 @@
 import React from "react";
 
+import PageHeader from "../components/PageHeader";
+
 /**
  * About Page
  *
@@ -9,9 +11,14 @@ import React from "react";
 
 const AboutPage = () => {
   return (
-    <div className="container my-5">
-      <h1>Página Sobre</h1>
-    </div>
+    <>
+      <PageHeader
+        title="Quem é Bruno Chirelli"
+        overline="Curiosidade, estudo e mãos à obra"
+        lead="Saiba um pouco mais sobre mim e entenda um pouco mais a forma como penso"
+        center
+      />
+    </>
   );
 };
 
