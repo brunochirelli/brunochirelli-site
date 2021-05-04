@@ -1,6 +1,6 @@
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = "https://oneday.brunochirelli.com.br",
+  URL: NETLIFY_SITE_URL = "https://brunochirelli.com.br",
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV,
 } = process.env;
@@ -11,8 +11,8 @@ const siteUrl = isNetlifyProduction
 
 module.exports = {
   siteMetadata: {
-    title: `One Day Website`,
-    description: `Kick off the next site project.`,
+    title: `Bruno Chirelli Freelancer`,
+    description: `Designer Freelancer`,
     author: `@brunochirelli`,
     siteUrl,
   },
@@ -20,25 +20,24 @@ module.exports = {
     FAST_DEV: true,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: "gatsby-plugin-gdpr-tracking",
-      options: {
-        debug: false,
-        googleAnalytics: {
-          // The property ID; the tracking code won't be generated without it.
-          trackingId: "G-T40HQ90X4S",
-          // Defines it google analytics should be started with out the cookie consent
-          autoStart: false,
-          // Setting this parameter is optional
-          anonymize: true, // <--- default
-          // Name of the cookie, that enables the tracking if it is true
-          controlCookieName: "gdpr-analytics-enabled", // <--- default
-          cookieFlags: "secure;samesite=none", // <--- default,
-        },
-        environments: ["production"], // default
-      },
-    },
+    // {
+    //   resolve: "gatsby-plugin-gdpr-tracking",
+    //   options: {
+    //     debug: false,
+    //     googleAnalytics: {
+    //       // The property ID; the tracking code won't be generated without it.
+    //       trackingId: "G-T40HQ90X4S",
+    //       // Defines it google analytics should be started with out the cookie consent
+    //       autoStart: false,
+    //       // Setting this parameter is optional
+    //       anonymize: true, // <--- default
+    //       // Name of the cookie, that enables the tracking if it is true
+    //       controlCookieName: "gdpr-analytics-enabled", // <--- default
+    //       cookieFlags: "secure;samesite=none", // <--- default,
+    //     },
+    //     environments: ["production"], // default
+    //   },
+    // },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -61,6 +60,15 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-top-layout`,
+    {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     {
       resolve: "gatsby-plugin-eslint",
@@ -71,6 +79,7 @@ module.exports = {
         // Any eslint-webpack-plugin options below
       },
     },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     {
       resolve: "gatsby-plugin-robots-txt",
