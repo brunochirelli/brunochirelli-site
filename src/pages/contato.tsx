@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 import { navigate } from "gatsby";
 
-import Layout from "../components/Layout";
-
-/**
- * Contact Page
- *
- * Mostra como renderizar um formulário usando Netlify Forms
- */
-
 function encode(data: any) {
   return Object.keys(data)
     .map(
@@ -18,7 +10,7 @@ function encode(data: any) {
     .join("&");
 }
 
-const ContactPage = () => {
+const Contato = () => {
   /**
    * local state to get all current form values
    */
@@ -32,7 +24,10 @@ const ContactPage = () => {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | any>
   ) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
   };
 
   /**
@@ -64,65 +59,56 @@ const ContactPage = () => {
       .then(() => navigate(form.getAttribute("action")))
       .catch(error => alert(error));
   };
-
   return (
-    <Layout seo={{ title: "Contato" }}>
-      <div className="container">
-        <h1>Contato</h1>
-        <form
-          name="contact"
-          method="post"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          action="/sucesso"
-          onSubmit={handleSubmit}
-          id="contact"
-        >
-          {/* Netlify Form - just for the bots */}
-          <input
-            type="hidden"
-            name="form-name"
-            value="contact"
-            onChange={handleChange}
-          ></input>
-          <p hidden>
-            <label>
-              Don’t fill this out:{" "}
-              <input name="bot-field" onChange={handleChange} />
-            </label>
-          </p>
-          {/* end Netlify Form */}
+    <div>
+      <form
+        name="contato"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        action="/sucesso"
+        onSubmit={handleSubmit}
+        id="contato-page-form"
+      >
+        {/* Netlify Form - just for the bots */}
+        <input
+          type="hidden"
+          name="form-name"
+          value="contato"
+          onChange={handleChange}
+        ></input>
+        <p hidden>
+          <label>
+            Don’t fill this out:{" "}
+            <input name="bot-field" onChange={handleChange} />
+          </label>
+        </p>
+        {/* end Netlify Form */}
 
-          <label>
-            Your Name:{" "}
-            <input type="text" name="name" onChange={handleChange} />
-          </label>
-          <label>
-            Your Email:{" "}
-            <input
-              type="email"
-              name="email"
-              onChange={handleChange}
-            />
-          </label>
-          <label>
-            Your Role:{" "}
-            <select name="role" multiple onSelect={handleChange}>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
-          </label>
-          <label>
-            Message:{" "}
-            <textarea
-              name="message"
-              onChange={handleChange}
-            ></textarea>
-          </label>
-          <button type="submit">Send</button>
-        </form>
-      </div>
-    </Layout>
+        <label>
+          Your Name:{" "}
+          <input type="text" name="name" onChange={handleChange} />
+        </label>
+        <label>
+          Your Email:{" "}
+          <input type="email" name="email" onChange={handleChange} />
+        </label>
+        <label>
+          Your Role:{" "}
+          <select name="role" multiple onSelect={handleChange}>
+            <option value="leader">Leader</option>
+            <option value="follower">Follower</option>
+          </select>
+        </label>
+        <label>
+          Message:{" "}
+          <textarea name="message" onChange={handleChange}></textarea>
+        </label>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
   );
 };
-export default ContactPage;
+
+export default Contato;
