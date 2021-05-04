@@ -1,7 +1,9 @@
 import React, { ReactElement } from "react";
 
+import { CssBaseline } from "@material-ui/core";
+
 // components and resources
-import "../static/bootstrap.css";
+// import "../static/bootstrap.css";
 
 import store from "../stores/store";
 import { Provider } from "react-redux";
@@ -20,6 +22,7 @@ type WrapperProps = {
 const Wrapper = ({ children }: WrapperProps) => {
   return (
     <Provider store={store}>
+      <CssBaseline />
       <ThemeWrapper>{children}</ThemeWrapper>
     </Provider>
   );
