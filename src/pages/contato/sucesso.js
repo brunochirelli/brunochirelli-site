@@ -26,9 +26,10 @@ const Sucesso = () => (
     <Helmet>
       {/* Event snippet for Enviar formulário de lead em Contato conversion page */}
       <script>
-        {gtag("event", "conversion", {
-          send_to: "AW-375649030/NPjzCKarspECEIbmj7MB",
-        })}
+        {typeof window !== "undefined" &&
+          window.gtag("event", "conversion", {
+            send_to: "AW-375649030/NPjzCKarspECEIbmj7MB",
+          })}
         ;
       </script>
     </Helmet>
