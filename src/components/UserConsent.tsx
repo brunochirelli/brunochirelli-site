@@ -39,10 +39,9 @@ const UserConsent = () => {
         <div className="container py-4">
           {console.log(open)}
           <p>
-            Este site utiliza ferramentas de análise para aperfeiçoar
-            nosso produto e oferecer para você experiências cada vez
-            melhores. Mas é voce que decide se quer compartilhar seus
-            dados.
+            Este site utiliza ferramentas de análise para aperfeiçoar nosso produto e
+            oferecer para você experiências cada vez melhores. Mas é voce que decide se
+            quer compartilhar seus dados.
           </p>
 
           <button
