@@ -20,10 +20,7 @@ const IndexPage = () => {
     <Layout seo={{ title: "Home Page SEO" }}>
       <h1>Redux</h1>
       <p>Theme is: {mode}</p>
-      <button
-        aria-label="toggle theme mode"
-        onClick={() => dispatch(toggleTheme())}
-      >
+      <button aria-label="toggle theme mode" onClick={() => dispatch(toggleTheme())}>
         Toggle Theme
       </button>
     </Layout>
