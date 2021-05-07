@@ -20,50 +20,65 @@ const PageHeader = ({
   ctaText = "Vamos conversar",
 }: PageHeaderProps) => {
   return (
-    <ContainerStyled
-      maxWidth="xl"
-      component="header"
-      style={{ textAlign: center && "center" }}
-    >
-      <div>
-        <Typography variant="overline" component="small">
-          {overline}
-        </Typography>
-        <Title component="h1" variant="h4">
-          {title}
-        </Title>
-        <Typography variant="subtitle1" component="p" paragraph>
-          {lead}
-        </Typography>
-        <Button
-          to="/contato"
-          variant="contained"
-          color="primary"
-          disableElevation
-        >
-          {ctaText}
-        </Button>
-      </div>
-    </ContainerStyled>
+    <StyledDiv>
+      <StyledContainer
+        component="header"
+        style={{ textAlign: center && "center", alignItems: center && "center" }}
+      >
+        <div className="text">
+          <Typography variant="overline" component="small">
+            {overline}
+          </Typography>
+          <Title component="h1" variant="h4" paragraph>
+            {title}
+          </Title>
+          <Typography variant="subtitle1" component="p" paragraph>
+            {lead}
+          </Typography>
+          <Button to="/contato" variant="contained" color="primary" disableElevation>
+            {ctaText}
+          </Button>
+        </div>
+      </StyledContainer>
+    </StyledDiv>
   );
 };
 
-const ContainerStyled: any = styled(Container)`
+const StyledDiv = styled.div`
+  background: ${({ theme }) => theme.background.contrast};
+`;
+
+const StyledContainer: any = styled(Container)`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  min-height: 45vh;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background: white;
+  min-height: 40vh;
+  margin-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  small {
+    font-size: 0.75em;
+  }
+
+  .text {
+    max-width: 800px;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  a {
+    font-size: 0.9em;
+  }
 `;
 
 const Title: any = styled(Typography)`
-  font-size: 2rem;
+  font-size: 1.8em;
 
   @media screen and (min-width: 960px) {
-    font-size: 2.5rem;
+    font-size: 2.25em;
   }
 `;
 
