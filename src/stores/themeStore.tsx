@@ -18,8 +18,7 @@ const MyThemeProvider = ({ children }: ProviderProps) => {
   // with that we can handle de current theme (dark, light, etc...)
   const value = {
     actualTheme,
-    toggleTheme: () =>
-      setActualTheme(actualTheme === "dark" ? "light" : "dark"),
+    toggleTheme: () => setActualTheme(actualTheme === "dark" ? "light" : "dark"),
   };
 
   // extending the interface to type theme object
