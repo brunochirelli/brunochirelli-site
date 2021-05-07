@@ -8,9 +8,15 @@ declare module "styled-components" {
   export interface DefaultTheme extends Theme {
     zIndex: {
       default: 1;
-      backdrop: number;
+      menubar: 2;
+      backdrop: 3;
     };
-    backgroundColor: ThemeSet;
+    background: {
+      default: ThemeSet;
+      contrast: ThemeSet;
+      header: ThemeSet;
+      headerMid: ThemeSet;
+    };
     textColor: ThemeSet;
   }
 }

@@ -1,8 +1,7 @@
 import { DefaultTheme } from "styled-components";
 import theme from "styled-theming";
 
-import { createMuiTheme } from "@material-ui/core/styles";
-import { Theme } from "@material-ui/core/styles/createMuiTheme";
+import { createMuiTheme, Theme } from "@material-ui/core/styles";
 import { lightGreen } from "@material-ui/core/colors";
 
 const muiTheme: Theme = createMuiTheme({
@@ -33,15 +32,30 @@ const defaultTheme: DefaultTheme = {
   ...muiTheme,
   zIndex: {
     default: 1,
+    menubar: 2,
     backdrop: 3,
   },
-  backgroundColor: theme("mode", {
-    light: "#fff",
-    dark: "#000",
-  }),
+  background: {
+    default: theme("mode", {
+      light: "rgb(250,250,250)",
+      dark: "rgb(22, 24, 25)",
+    }),
+    contrast: theme("mode", {
+      light: "#fff",
+      dark: "rgb(0, 0, 0)",
+    }),
+    header: theme("mode", {
+      light: "#fff",
+      dark: "rgb(16,21,23)",
+    }),
+    headerMid: theme("mode", {
+      light: "rgb(250,250,250)",
+      dark: "rgb(39, 43, 45)",
+    }),
+  },
   textColor: theme("mode", {
-    light: "#000",
-    dark: "#fff",
+    light: "rgba(0, 0, 0, 0.87)",
+    dark: "rgba(255, 255, 255, 0.7)",
   }),
 };
 
