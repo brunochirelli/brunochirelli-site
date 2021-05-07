@@ -3,10 +3,7 @@ import { navigate } from "gatsby";
 
 function encode(data: any) {
   return Object.keys(data)
-    .map(
-      (key: any) =>
-        encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-    )
+    .map((key: any) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
     .join("&");
 }
 
@@ -79,19 +76,16 @@ const Contato = () => {
         ></input>
         <p hidden>
           <label>
-            Don’t fill this out:{" "}
-            <input name="bot-field" onChange={handleChange} />
+            Don’t fill this out: <input name="bot-field" onChange={handleChange} />
           </label>
         </p>
         {/* end Netlify Form */}
 
         <label>
-          Your Name:{" "}
-          <input type="text" name="name" onChange={handleChange} />
+          Your Name: <input type="text" name="name" onChange={handleChange} />
         </label>
         <label>
-          Your Email:{" "}
-          <input type="email" name="email" onChange={handleChange} />
+          Your Email: <input type="email" name="email" onChange={handleChange} />
         </label>
         <label>
           Your Role:{" "}
@@ -101,8 +95,7 @@ const Contato = () => {
           </select>
         </label>
         <label>
-          Message:{" "}
-          <textarea name="message" onChange={handleChange}></textarea>
+          Message: <textarea name="message" onChange={handleChange}></textarea>
         </label>
 
         <button type="submit">Enviar</button>
