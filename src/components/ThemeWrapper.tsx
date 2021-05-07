@@ -1,8 +1,5 @@
 import React, { ReactElement } from "react";
-import {
-  DefaultTheme,
-  ThemeProvider as StyledTheme,
-} from "styled-components";
+import { DefaultTheme, ThemeProvider as StyledTheme } from "styled-components";
 import { useSelector } from "react-redux";
 
 import { RootState } from "../stores/store";
