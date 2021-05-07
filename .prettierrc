@@ -1,5 +1,5 @@
 {
   "arrowParens": "avoid",
-  "printWidth": 70,
+  "printWidth": 90,
   "tabWidth": 2
 }
