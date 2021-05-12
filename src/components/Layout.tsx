@@ -30,9 +30,28 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
 
 const LayoutStyled = styled.div`
   z-index: ${({ theme }) => theme.zIndex.default};
-  color: ${({ theme }) => theme.textColor};
+  color: ${({ theme }) => theme.textColor.default};
   font-size: ${({ fontBase }: { fontBase: number }) => fontBase}px;
   background: ${({ theme }) => theme.background.default};
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: ${({ theme }) => theme.textColor.heading};
+
+    & a {
+      color: ${({ theme }) => theme.textColor.heading};
+      transition: all 0.2s ease;
+
+      &:hover {
+        color: ${({ theme }) => theme.textColor.headingHover};
+        text-decoration: none;
+      }
+    }
+  }
 `;
 
 export default Layout;
