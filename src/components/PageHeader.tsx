@@ -5,20 +5,14 @@ import { Container, Typography } from "@material-ui/core";
 import { Button } from "gatsby-material-ui-components";
 
 type PageHeaderProps = {
-  overline: string;
   title: string;
   lead: string;
+  overline?: string;
   center?: boolean;
   ctaText?: string;
 };
 
-const PageHeader = ({
-  overline,
-  title,
-  lead,
-  center,
-  ctaText = "Vamos conversar",
-}: PageHeaderProps) => {
+const PageHeader = ({ overline, title, lead, center, ctaText }: PageHeaderProps) => {
   return (
     <StyledDiv>
       <StyledContainer
@@ -35,9 +29,11 @@ const PageHeader = ({
           <Typography variant="subtitle1" component="p" paragraph>
             {lead}
           </Typography>
-          <Button to="/contato" variant="contained" color="primary" disableElevation>
-            {ctaText}
-          </Button>
+          {ctaText && (
+            <Button to="/contato" variant="contained" color="primary" disableElevation>
+              {ctaText}
+            </Button>
+          )}
         </div>
       </StyledContainer>
     </StyledDiv>
@@ -70,7 +66,7 @@ const StyledContainer: any = styled(Container)`
   }
 
   a {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 `;
 
