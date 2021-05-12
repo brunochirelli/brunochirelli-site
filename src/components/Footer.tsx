@@ -47,7 +47,7 @@ const Footer = () => {
               Serviços
             </Typography>
             <Typography paragraph>
-              <LinkStyled to="/servicos/search-engine-marketing">
+              <LinkStyled to="/servicos/marketing-de-busca">
                 Search Engine Marketing
               </LinkStyled>
             </Typography>
