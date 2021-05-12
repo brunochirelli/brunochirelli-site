@@ -53,10 +53,30 @@ const defaultTheme: DefaultTheme = {
       dark: "rgb(39, 43, 45)",
     }),
   },
-  textColor: theme("mode", {
-    light: "rgba(0, 0, 0, 0.87)",
-    dark: "rgba(255, 255, 255, 0.7)",
-  }),
+  textColor: {
+    default: theme("mode", {
+      light: "rgb(39,43,45)",
+      dark: "rgb(210,210,210)",
+    }),
+    heading: theme("mode", {
+      light: "rgb(5,5,5)",
+      dark: "rgb(250, 250, 250)",
+    }),
+    headingHover: theme("mode", {
+      light: "rgb(59 65 53)",
+      dark: "rgb(245, 245, 245)",
+    }),
+    button: {
+      primary: theme("mode", {
+        light: "rgb(5,5,5)",
+        dark: "rgb(250, 250, 250)",
+      }),
+      secondary: theme("mode", {
+        light: "rgb(5,5,5)",
+        dark: "rgb(250, 250, 250)",
+      }),
+    },
+  },
 };
 
 export default defaultTheme;

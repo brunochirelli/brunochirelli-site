@@ -17,6 +17,14 @@ declare module "styled-components" {
       header: ThemeSet;
       headerMid: ThemeSet;
     };
-    textColor: ThemeSet;
+    textColor: {
+      default: ThemeSet;
+      heading: ThemeSet;
+      headingHover: ThemeSet;
+      button: {
+        primary: ThemeSet;
+        secondary: ThemeSet;
+      };
+    };
   }
 }
