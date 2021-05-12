@@ -40,12 +40,12 @@ const Header = (props: HeaderProps) => {
             <AccessibleOptions />
             <Container>
               <StyledToolbar>
-                <LogoLink>
+                <StyledLogoLink to="/" color="textPrimary" variant="h6">
                   <img src={logo} alt="Bruno Chirelli Digital" />
-                  <Link to="/" color="textPrimary" variant="h6">
+                  <span>
                     Bruno <strong>Chirelli</strong>
-                  </Link>
-                </LogoLink>
+                  </span>
+                </StyledLogoLink>
 
                 <Menu />
               </StyledToolbar>
@@ -61,14 +61,15 @@ const StyledDiv = styled.div`
   margin-bottom: 56px;
 
   @media screen and (min-width: ${({ theme }) => theme.breakpoints.values.md}px) {
-    margin-bottom: 100px;
+    margin-bottom: 110px;
   }
 
   header {
     z-index: ${({ theme }) => theme.zIndex.menubar};
-    color: ${({ theme }) => theme.textColor};
+    color: ${({ theme }) => theme.textColor.default};
     background: ${({ theme }) => theme.background.header};
     border-bottom: 1px solid rgba(0, 0, 0, 0.075);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
     transition: 0.2s all ease;
   }
 `;
@@ -87,25 +88,26 @@ const StyledToolbar: any = styled(Toolbar)`
   }
 `;
 
-const LogoLink = styled.div`
+const StyledLogoLink: any = styled(Link)`
   display: flex;
   align-items: center;
+  color: ${({ theme }) => theme.textColor.default};
+  font-family: "montserrat", sans-serif;
 
-  a {
-    color: ${({ theme }) => theme.textColor};
-    font-family: "montserrat", sans-serif;
+  span {
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+  }
 
-    strong {
-      transition: all 0.1s ease-in;
+  img {
+    padding-right: 0.5rem;
+  }
+
+  &:hover {
+    span {
+      opacity: 0.7;
     }
-
-    &:hover {
-      text-decoration: none;
-
-      strong {
-        color: ${({ theme }) => theme.palette.primary.main};
-      }
-    }
+    text-decoration: none;
   }
 `;
 
