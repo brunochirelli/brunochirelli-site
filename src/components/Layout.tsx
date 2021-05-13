@@ -1,12 +1,13 @@
 import React, { ReactElement, ReactNode } from "react";
 import styled from "styled-components";
 
+import { useSelector } from "react-redux";
+import { RootState } from "../stores/store";
+
 import SEO, { SEOProps } from "./SEO";
 // import UserConsent from "./UserConsent";
 import Header from "./Header";
 import Footer from "./Footer";
-import { useSelector } from "react-redux";
-import { RootState } from "../stores/store";
 
 type LayoutProps = {
   children: ReactNode;
@@ -19,7 +20,7 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
   return (
     <LayoutStyled fontBase={fontBase}>
       <SEO {...seo} />
-      <Header siteTitle="One-Day-Site" />
+      <Header />
 
       <main id="content">{children}</main>
 
@@ -30,8 +31,9 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
 
 const LayoutStyled = styled.div`
   z-index: ${({ theme }) => theme.zIndex.default};
-  color: ${({ theme }) => theme.textColor.default};
+  color: ${({ theme }) => theme.palette.secondary.main};
   font-size: ${({ fontBase }: { fontBase: number }) => fontBase}px;
+  font-family: ${({ theme }) => theme.font.primary};
   background: ${({ theme }) => theme.background.default};
 
   h1,
@@ -40,10 +42,10 @@ const LayoutStyled = styled.div`
   h4,
   h5,
   h6 {
-    color: ${({ theme }) => theme.textColor.heading};
+    /* color: ${({ theme }) => theme.palette.primary.main}; */
 
     & a {
-      color: ${({ theme }) => theme.textColor.heading};
+      color: ${({ theme }) => theme.palette.secondary.main};
       transition: all 0.2s ease;
 
       &:hover {
@@ -51,6 +53,12 @@ const LayoutStyled = styled.div`
         text-decoration: none;
       }
     }
+  }
+
+  h1 {
+    color: ${({ theme }) => theme.palette.primary.main};
+    font-size: 3em;
+    font-family: ${({ theme }) => theme.font.display};
   }
 `;
 
