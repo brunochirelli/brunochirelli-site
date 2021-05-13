@@ -8,7 +8,9 @@ const Header = () => {
     <StyledNav>
       <ul>
         <li>
-          <Link to="/">Bruno Chirelli</Link>
+          <Link className="logo" to="/">
+            Bruno Chirelli
+          </Link>
         </li>
         <li>
           <Link to="/sobre">Eu</Link>
@@ -59,6 +61,7 @@ const StyledNav = styled.nav`
         a {
           color: ${({ theme }) => theme.palette.primary.main};
           font-size: 2rem;
+          font-family: "bely", "serif";
           font-family: ${({ theme }) => theme.font.display};
         }
       }
