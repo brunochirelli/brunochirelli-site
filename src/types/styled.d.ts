@@ -1,15 +1,23 @@
 // import original module declarations
-import { Theme } from "@material-ui/core";
 import "styled-components";
 import { ThemeSet } from "styled-theming";
 
 // and extend them!
 declare module "styled-components" {
-  export interface DefaultTheme extends Theme {
-    zIndex: {
-      default: 1;
-      menubar: 2;
-      backdrop: 3;
+  export interface DefaultTheme {
+    palette: {
+      primary: {
+        main: string;
+      };
+      secondary: {
+        main: string;
+      };
+    };
+    font: {
+      display: string;
+      heading: string;
+      primary: string;
+      secondary: string;
     };
     background: {
       default: ThemeSet;
@@ -25,6 +33,11 @@ declare module "styled-components" {
         primary: ThemeSet;
         secondary: ThemeSet;
       };
+    };
+    zIndex: {
+      default: 1;
+      menubar: 2;
+      backdrop: 3;
     };
   }
 }

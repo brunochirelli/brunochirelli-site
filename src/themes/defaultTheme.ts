@@ -1,39 +1,14 @@
 import { DefaultTheme } from "styled-components";
 import theme from "styled-theming";
 
-import { createMuiTheme, Theme } from "@material-ui/core/styles";
-import { lightGreen } from "@material-ui/core/colors";
-
-const muiTheme: Theme = createMuiTheme({
-  palette: {
-    primary: lightGreen,
-    secondary: {
-      main: "#16282b",
-      light: "#3d5054",
-      dark: "#16282b",
-    },
-  },
-  typography: {
-    h1: {
-      fontWeight: 700,
-    },
-    h2: {
-      fontFamily: "Montserrat, sans-serif",
-      fontWeight: 500,
-    },
-    h4: {
-      fontFamily: "Montserrat, sans-serif",
-      fontWeight: 700,
-    },
-  },
-});
-
 const defaultTheme: DefaultTheme = {
-  ...muiTheme,
-  zIndex: {
-    default: 1,
-    menubar: 2,
-    backdrop: 3,
+  palette: {
+    primary: {
+      main: "rgb(10, 191, 83)",
+    },
+    secondary: {
+      main: "rgb(0, 17, 44)",
+    },
   },
   background: {
     default: theme("mode", {
@@ -52,6 +27,12 @@ const defaultTheme: DefaultTheme = {
       light: "rgb(250,250,250)",
       dark: "rgb(39, 43, 45)",
     }),
+  },
+  font: {
+    display: `"bely-display", "bely", "sans-serif"`,
+    heading: `"bely", "sans-serif"`,
+    primary: `"open-sans", "sans-serif"`,
+    secondary: `"bely", "serif"`,
   },
   textColor: {
     default: theme("mode", {
@@ -76,6 +57,11 @@ const defaultTheme: DefaultTheme = {
         dark: "rgb(250, 250, 250)",
       }),
     },
+  },
+  zIndex: {
+    default: 1,
+    menubar: 2,
+    backdrop: 3,
   },
 };
 
