@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import { RootState } from "../stores/store";
 import defaultTheme from "../themes/defaultTheme";
-import { ThemeProvider } from "@material-ui/styles";
+// import { ThemeProvider } from "@material-ui/styles";
 
 /**
  * THEME WRAPPER
@@ -33,11 +33,7 @@ const ThemeWrapper = ({ children }: ThemeWrapperProps) => {
     ...defaultTheme,
     mode,
   };
-  return (
-    <ThemeProvider theme={theme}>
-      <StyledTheme theme={theme}>{children}</StyledTheme>
-    </ThemeProvider>
-  );
+  return <StyledTheme theme={theme}>{children}</StyledTheme>;
 };
 
 export default ThemeWrapper;
