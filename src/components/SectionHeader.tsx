@@ -8,7 +8,7 @@ type SectionHeaderProps = {
 const SectionHeader = ({ title }: SectionHeaderProps) => {
   return (
     <StyledDiv>
-      <h1>{title}</h1>
+      <h1 className="section-header">{title}</h1>
     </StyledDiv>
   );
 };
