@@ -32,7 +32,7 @@ const StyledNav = styled.nav`
   width: 100%;
   padding-top: 0.5rem;
   font-size: 1.3rem;
-  font-family: "Bely", "sans-serif";
+  font-family: ${({ theme }) => theme.font.heading};
 
   ul {
     display: flex;
@@ -59,7 +59,7 @@ const StyledNav = styled.nav`
         a {
           color: ${({ theme }) => theme.palette.primary.main};
           font-size: 2rem;
-          font-family: "Bely Display", "sans-serif";
+          font-family: ${({ theme }) => theme.font.display};
         }
       }
 
