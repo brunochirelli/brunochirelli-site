@@ -1,80 +1,61 @@
 import React from "react";
 import styled from "styled-components";
 
-import { Container, Typography } from "@material-ui/core";
-import { Button } from "gatsby-material-ui-components";
+import { Container } from "@material-ui/core";
 
-type PageHeaderProps = {
-  title: string;
-  lead: string;
-  overline?: string;
-  center?: boolean;
-  ctaText?: string;
-};
+import likeSketch from "../images/svgs/likeSketch.svg";
+import Button from "./Button";
 
-const PageHeader = ({ overline, title, lead, center, ctaText }: PageHeaderProps) => {
+type PageHeaderProps = {};
+
+const PageHeader = () => {
   return (
-    <StyledDiv>
-      <StyledContainer
-        component="header"
-        style={{ textAlign: center && "center", alignItems: center && "center" }}
-      >
-        <div className="text">
-          <Typography variant="overline" component="small">
-            {overline}
-          </Typography>
-          <Title component="h1" variant="h4" paragraph>
-            {title}
-          </Title>
-          <Typography variant="subtitle1" component="p" paragraph>
-            {lead}
-          </Typography>
-          {ctaText && (
-            <Button to="/contato" variant="contained" color="primary" disableElevation>
-              {ctaText}
-            </Button>
-          )}
-        </div>
-      </StyledContainer>
-    </StyledDiv>
+    <StyledHeader>
+      <Container>
+        <StyledContent>
+          <img className="sketch" src={likeSketch} alt="" />
+          <h1>
+            Publicitário e UX Designer com mais de 10 anos de experiência que usa
+            marketing, design e código para solucionar problemas
+          </h1>
+          <Button to="/contato">Entre em contato</Button>
+        </StyledContent>
+      </Container>
+    </StyledHeader>
   );
 };
 
-const StyledDiv = styled.div`
-  background: ${({ theme }) => theme.background.contrast};
+const StyledHeader = styled.header`
+  display: flex;
+  align-items: center;
+  padding-top: 6rem;
+  padding-bottom: 2.5rem;
+  text-align: center;
+  background: #f4f2ec;
+
+  @media screen and (min-width: 600px) {
+    padding-top: 8rem;
+  }
 `;
 
-const StyledContainer: any = styled(Container)`
+const StyledContent = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 40vh;
-  margin-bottom: 3rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  align-items: center;
 
-  small {
-    font-size: 0.75em;
+  h1 {
+    max-width: 50rem;
+    padding: 2rem 1rem;
+    color: ${({ theme }) => theme.palette.secondary.main};
+    font-size: 1.75em;
+    font-family: "Bely", "sans-serif";
+    line-height: 1.05;
   }
 
-  .text {
-    max-width: 800px;
-  }
-
-  p {
-    font-size: 1em;
-  }
-
-  a {
-    font-size: 0.8em;
-  }
-`;
-
-const Title: any = styled(Typography)`
-  font-size: 1.8em;
-
-  @media screen and (min-width: 960px) {
-    font-size: 2.25em;
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 3em;
+    }
   }
 `;
 
