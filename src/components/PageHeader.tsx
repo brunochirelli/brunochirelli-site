@@ -3,21 +3,20 @@ import styled from "styled-components";
 
 import { Container } from "@material-ui/core";
 
-import likeSketch from "../images/svgs/likeSketch.svg";
 import Button from "./Button";
 
-type PageHeaderProps = {};
+type PageHeaderProps = {
+  title: string;
+  sketch?: any;
+};
 
-const PageHeader = () => {
+const PageHeader = ({ title, sketch }: PageHeaderProps) => {
   return (
     <StyledHeader>
       <Container>
         <StyledContent>
-          <img className="sketch" src={likeSketch} alt="" />
-          <h1>
-            Publicitário e UX Designer com mais de 10 anos de experiência que usa
-            marketing, design e código para solucionar problemas
-          </h1>
+          <img className="sketch" src={sketch} alt="" />
+          <h1>{title}</h1>
           <Button to="/contato">Entre em contato</Button>
         </StyledContent>
       </Container>
