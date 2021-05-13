@@ -66,22 +66,15 @@ module.exports = {
         icon: `src/images/brunochirelli-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-top-layout`,
     {
-      resolve: `gatsby-theme-material-ui`,
+      resolve: "gatsby-plugin-web-font-loader",
       options: {
-        webFontsConfig: {
-          fonts: {
-            google: [
-              {
-                family: `Montserrat`,
-                variants: [`500`, `700`],
-              },
-            ],
-          },
+        typekit: {
+          id: "mxl3jpq",
         },
       },
     },
+    `gatsby-plugin-top-layout`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
@@ -89,6 +82,10 @@ module.exports = {
           injectFirst: true,
         },
       },
+    },
+    {
+      resolve: `gatsby-theme-material-ui`,
+      options: {},
     },
     `gatsby-plugin-styled-components`,
     {
