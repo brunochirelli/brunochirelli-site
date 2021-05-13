@@ -30,9 +30,14 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
 };
 
 const LayoutStyled = styled.div`
+  .logo {
+    font-family: "bely-display", "sans-serif";
+  }
+
   z-index: ${({ theme }) => theme.zIndex.default};
   color: ${({ theme }) => theme.palette.secondary.main};
   font-size: ${({ fontBase }: { fontBase: number }) => fontBase}px;
+  font-family: "open-sans", "sans-serif";
   font-family: ${({ theme }) => theme.font.primary};
   background: ${({ theme }) => theme.background.default};
 
@@ -55,10 +60,10 @@ const LayoutStyled = styled.div`
     }
   }
 
-  h1 {
+  h1.section-header {
     color: ${({ theme }) => theme.palette.primary.main};
     font-size: 3em;
-    font-family: ${({ theme }) => theme.font.display};
+    font-family: "bely-display", "sans-serif";
   }
 `;
 
