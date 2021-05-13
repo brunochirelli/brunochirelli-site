@@ -30,7 +30,7 @@ const ServiceAbout = () => (
         <Button to="/sobre" variant="contained" color="primary" style={{ margin: '0.5rem' }}>
             Me conheça mais
         </Button>
-        <Button to="/sobre" variant="contained" color="secondary" style={{ margin: '0.5rem' }}>
+        <Button to="/portfolio" variant="contained" color="secondary" style={{ margin: '0.5rem' }}>
             Veja meu portfólio
         </Button>
     </Container>
