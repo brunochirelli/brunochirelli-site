@@ -6,6 +6,8 @@ import PageHeader from "../components/PageHeader";
 import Resume from "../components/Resume";
 import SectionHeader from "../components/SectionHeader";
 
+import likeSketch from "../images/svgs/likeSketch.svg";
+
 /**
  * Home Page
  *
@@ -16,7 +18,10 @@ import SectionHeader from "../components/SectionHeader";
 const IndexPage = () => {
   return (
     <Layout seo={{ title: "Home Page SEO" }}>
-      <PageHeader />
+      <PageHeader
+        sketch={likeSketch}
+        title="Publicitário e UX Designer com mais de 10 anos de experiência que usa marketing, design e código para solucionar problemas"
+      />
 
       <SectionHeader title="Portfolio" />
 
