@@ -60,6 +60,13 @@ const LayoutStyled = styled.div`
     }
   }
 
+  h2 {
+    color: ${({ theme }) => theme.palette.secondary.main};
+    font-family: "bely", "sans-serif";
+    font-family: ${({ theme }) => theme.font.heading};
+    line-height: 1.2;
+  }
+
   h1.section-header {
     color: ${({ theme }) => theme.palette.primary.main};
     font-size: 3em;
