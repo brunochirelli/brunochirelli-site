@@ -44,16 +44,24 @@ const StyledContent = styled.div`
 
   h1 {
     max-width: 50rem;
-    padding: 2rem 1rem;
+    padding: 1rem;
     color: ${({ theme }) => theme.palette.secondary.main};
     font-size: 1.75em;
     font-family: "Bely", "sans-serif";
     line-height: 1.05;
+
+    @media screen and (min-width: 600px) {
+      font-size: 3em;
+    }
   }
 
-  @media screen and (min-width: 600px) {
-    h1 {
-      font-size: 3em;
+  img {
+    max-height: 4rem;
+    margin-top: 1rem;
+
+    @media screen and (min-width: 600px) {
+      max-height: 100%;
+      margin-top: 0;
     }
   }
 `;
