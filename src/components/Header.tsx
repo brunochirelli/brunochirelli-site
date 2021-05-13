@@ -1,113 +1,89 @@
-import React, { ReactElement } from "react";
+import React from "react";
 import styled from "styled-components";
-
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  // Typography,
-  useScrollTrigger,
-} from "@material-ui/core";
 
 import { Link } from "gatsby-material-ui-components";
 
-import Menu from "./Menu";
-import AccessibleOptions from "./AccessibleOptions";
-
-import logo from "../images/svgs/brunochirellidigital.svg";
-
-const ElevationScroll = ({ children }: { children: ReactElement }) => {
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-};
-
-type HeaderProps = {
-  siteTitle: string;
-};
-
-const Header = (props: HeaderProps) => {
+const Header = () => {
   return (
-    <div>
-      <StyledDiv>
-        <ElevationScroll {...props}>
-          <AppBar color="inherit">
-            <AccessibleOptions />
-            <Container>
-              <StyledToolbar>
-                <StyledLogoLink to="/" color="textPrimary" variant="h6">
-                  <img src={logo} alt="Bruno Chirelli Digital" />
-                  <span>
-                    Bruno <strong>Chirelli</strong>
-                  </span>
-                </StyledLogoLink>
-
-                <Menu />
-              </StyledToolbar>
-            </Container>
-          </AppBar>
-        </ElevationScroll>
-      </StyledDiv>
-    </div>
+    <StyledNav>
+      <ul>
+        <li>
+          <Link to="/">Bruno Chirelli</Link>
+        </li>
+        <li>
+          <Link to="/">Eu</Link>
+        </li>
+        <li>
+          <Link to="/">Serviços</Link>
+        </li>
+        <li>
+          <Link to="/">Portfolio</Link>
+        </li>
+        <li>
+          <Link to="/">Contato</Link>
+        </li>
+      </ul>
+    </StyledNav>
   );
 };
 
-const StyledDiv = styled.div`
-  margin-bottom: 56px;
+const StyledNav = styled.nav`
+  position: absolute;
+  width: 100%;
+  padding-top: 0.5rem;
+  font-size: 1.3rem;
+  font-family: "Bely", "sans-serif";
 
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.values.md}px) {
-    margin-bottom: 110px;
-  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 
-  header {
-    z-index: ${({ theme }) => theme.zIndex.menubar};
-    color: ${({ theme }) => theme.textColor.default};
-    background: ${({ theme }) => theme.background.header};
-    border-bottom: 1px solid rgba(0, 0, 0, 0.075);
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
-    transition: 0.2s all ease;
-  }
-`;
+    li {
+      flex-grow: 1;
+      padding: 0 0.5rem;
+      text-align: center;
+      list-style-type: none;
 
-const StyledToolbar: any = styled(Toolbar)`
-  display: flex;
-  justify-content: space-between;
-  padding: 0;
+      a {
+        color: ${({ theme }) => theme.palette.secondary.main};
+      }
 
-  h6 {
-    font-family: "montserrat", sans-serif;
+      &:first-of-type {
+        width: 100%;
 
-    strong {
-      font-weight: 700;
+        a {
+          color: ${({ theme }) => theme.palette.primary.main};
+          font-size: 2rem;
+          font-family: "Bely Display", "sans-serif";
+        }
+      }
+
+      @media screen and (min-width: 600px) {
+        flex-grow: initial;
+
+        &:nth-of-type(1) {
+          order: 3;
+          width: auto;
+        }
+        &:nth-of-type(2) {
+          order: 1;
+        }
+        &:nth-of-type(3) {
+          order: 2;
+        }
+        &:nth-of-type(4) {
+          order: 4;
+        }
+        &:nth-of-type(5) {
+          order: 5;
+        }
+      }
     }
-  }
-`;
-
-const StyledLogoLink: any = styled(Link)`
-  display: flex;
-  align-items: center;
-  color: ${({ theme }) => theme.textColor.default};
-  font-family: "montserrat", sans-serif;
-
-  span {
-    opacity: 1;
-    transition: all 0.2s ease-in-out;
-  }
-
-  img {
-    padding-right: 0.5rem;
-  }
-
-  &:hover {
-    span {
-      opacity: 0.7;
-    }
-    text-decoration: none;
   }
 `;
 
