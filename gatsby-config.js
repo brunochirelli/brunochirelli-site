@@ -15,6 +15,7 @@ module.exports = {
     siteUrl,
   },
   flags: {
+    PRESERVE_WEBPACK_CACHE: true,
     FAST_DEV: true,
   },
   plugins: [
@@ -36,6 +37,7 @@ module.exports = {
     //     environments: ["production"], // default
     //   },
     // },
+
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
