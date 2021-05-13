@@ -6,8 +6,8 @@ const ArticleHeader = () => {
   return (
     <StyledHeader>
       <Container>
-        <Grid container alignItems="center">
-          <Grid className="intro-text" item xs={12} sm={6}>
+        <Grid container alignItems="center" justify="space-between" spacing={2}>
+          <Grid className="intro-text" item xs={12} sm={5}>
             <small className="category">Identidade Visual</small>
             <h1>Desenvolvendo uma nova versão de uma comunidade atlética</h1>
             <p className="lead">
@@ -32,7 +32,8 @@ const StyledHeader = styled.header`
   padding-top: 7rem;
 
   @media screen and (min-width: 600px) {
-    padding: 7rem 0;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
   }
 
   .category {
@@ -48,12 +49,13 @@ const StyledHeader = styled.header`
     line-height: 1.05;
 
     @media screen and (min-width: 600px) {
-      font-size: 2.7em;
+      font-size: 3em;
     }
   }
 
   .intro-text {
-    padding: 3rem 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
   }
 
   .featured-image {
@@ -73,7 +75,7 @@ const StyledHeader = styled.header`
       border-radius: 10px;
 
       @media screen and (min-width: 600px) {
-        height: 45vh;
+        height: 50vh;
       }
     }
 
@@ -89,7 +91,7 @@ const StyledHeader = styled.header`
       content: " ";
 
       @media screen and (min-width: 600px) {
-        height: 45vh;
+        height: 50vh;
       }
     }
   }
