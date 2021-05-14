@@ -15,7 +15,7 @@ const PageHeader = ({ title, sketch }: PageHeaderProps) => {
     <StyledHeader>
       <Container>
         <StyledContent>
-          <img className="sketch" src={sketch} alt="" />
+          {sketch && <img className="sketch" src={sketch} alt="" />}
           <h1>{title}</h1>
           <Button to="/contato">Entre em contato</Button>
         </StyledContent>
