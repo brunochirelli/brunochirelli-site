@@ -13,7 +13,7 @@ const Header = () => {
           </Link>
         </li>
         <li>
-          <Link to="/sobre">Eu</Link>
+          <Link to="/sobre">Sobre</Link>
         </li>
         <li>
           <Link to="/blog">Ideias</Link>
@@ -22,7 +22,7 @@ const Header = () => {
           <Link to="/portfolio">Portfolio</Link>
         </li>
         <li>
-          <Link to="/">Contato</Link>
+          <Link to="/contato">Contato</Link>
         </li>
       </ul>
     </StyledNav>
