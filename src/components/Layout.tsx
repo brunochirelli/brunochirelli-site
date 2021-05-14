@@ -11,6 +11,13 @@ import Footer from "./Footer";
 
 type LayoutProps = {
   children: ReactNode;
+  /**
+   * SEO is a object with a series of props that rest in SEO component.
+   *
+   * Check the SEO component for more instructions
+   *
+   * @example <Layout seo={{title: 'Page Title'}}>...</Layout>
+   */
   seo?: SEOProps;
 };
 
@@ -24,7 +31,7 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
 
       <main id="content">{children}</main>
 
-      <Footer />
+      {/* <Footer /> */}
     </LayoutStyled>
   );
 };
