@@ -24,14 +24,16 @@ const BlogPage = () => {
     },
   ];
   return (
-    <Layout>
+    <Layout seo={{ title: "Blog | Bruno Chirelli" }}>
       <PageHeader
         sketch={lightSketch}
         title="Ideias e pensamentos que desenvolvi durante minha jornada e que quero compartilhar com você"
+        ctaText="Vamos lá"
+        ctaLink="#blog-index"
       />
       <SectionHeader title="Blog" />
 
-      <Container>
+      <Container id="blog-index">
         <Grid container spacing={3}>
           {articles.map((art, i) => (
             <Grid item xs={12} sm={4} key={i}>
