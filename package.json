@@ -38,6 +38,7 @@
     "react-hook-form": "^7.5.0",
     "react-icons": "^4.2.0",
     "react-redux": "^7.2.3",
+    "smoothscroll-polyfill": "^0.4.4",
     "styled-components": "^5.2.3",
     "styled-theming": "^2.2.0"
   },

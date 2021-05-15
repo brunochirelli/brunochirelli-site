@@ -5,9 +5,7 @@ import { Provider } from "react-redux";
 import CssBaseline from "@material-ui/core/CssBaseline";
 
 import store from "../../src/stores/store";
-
 import ThemeWrapper from "../../src/components/ThemeWrapper";
-
 import "../../src/static/global.css";
 
 export default function TopLayout({ children }) {
