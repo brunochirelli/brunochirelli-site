@@ -16,7 +16,7 @@ const Button = ({ to, children }: ButtonProps) => {
 
   const handleScroll = () => {
     // Grab the "to" variable and select the element and scroll to them
-    document.querySelector(to)?.scrollIntoView();
+    document.querySelector(to)?.scrollIntoView({ behavior: "smooth" });
   };
 
   if (anchored)
