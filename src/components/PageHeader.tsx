@@ -32,19 +32,13 @@ const PageHeader = ({
   ctaLink = "/contato",
   hideCta,
 }: PageHeaderProps) => {
-  const anchored = ctaLink?.split("")[0] === "#" ? true : false;
-
   return (
     <StyledHeader sketch={sketch}>
       <Container>
         <StyledContent>
           {sketch && <img className="sketch" src={sketch} alt="" />}
           <h1>{title}</h1>
-          {!hideCta && (
-            <Button to={ctaLink} variant={anchored ? "secondary" : "primary"}>
-              {ctaText}
-            </Button>
-          )}
+          {!hideCta && <Button to={ctaLink}>{ctaText}</Button>}
         </StyledContent>
       </Container>
     </StyledHeader>
