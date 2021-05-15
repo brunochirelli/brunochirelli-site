@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Resume = () => {
   return (
     <StyledContainer>
-      <Grid container>
+      <Grid container id="resume">
         {/* Experiência */}
 
         <Grid className="section" item container xs={12} sm={6} spacing={2}>
