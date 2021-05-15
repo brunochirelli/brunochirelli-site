@@ -8,6 +8,8 @@ import store from "../../src/stores/store";
 
 import ThemeWrapper from "../../src/components/ThemeWrapper";
 
+import "../../src/static/global.css";
+
 export default function TopLayout({ children }) {
   return (
     <Provider store={store}>
@@ -16,10 +18,7 @@ export default function TopLayout({ children }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
-        <link
-          href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="stylesheet" href="https://use.typekit.net/mxl3jpq.css"></link>
       </Helmet>
       <CssBaseline />
       <ThemeWrapper>{children}</ThemeWrapper>
