@@ -2,11 +2,10 @@ import React, { ReactElement } from "react";
 
 import { CssBaseline } from "@material-ui/core";
 
-// components and resources
-// import "../static/bootstrap.css";
+// static stylesheets
 
-import store from "../stores/store";
 import { Provider } from "react-redux";
+import store from "../stores/store";
 import ThemeWrapper from "./ThemeWrapper";
 
 /**
