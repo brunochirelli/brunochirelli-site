@@ -27,6 +27,8 @@ const AboutPage = () => {
       <PageHeader
         title="Publicitário e UX Designer com mais de 10 anos de experiência que usa linhas em design e de código para solucionar problemas não lineares"
         sketch={manSketch}
+        ctaText="Veja meu currículo"
+        ctaLink="#resume"
       />
 
       <StyledContainer>
