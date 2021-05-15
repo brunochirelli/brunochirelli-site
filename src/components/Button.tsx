@@ -8,9 +8,10 @@ type ButtonProps = {
   children: ReactNode;
   to: string;
   onClick?: any;
+  contained?: boolean;
 };
 
-const Button = ({ to, children }: ButtonProps) => {
+const Button = ({ to, children, contained }: ButtonProps) => {
   // Check if the link is to an anchor to decide wich style of button will be outputed
   const anchored = to?.split("")[0] === "#" ? true : false;
 
@@ -19,12 +20,40 @@ const Button = ({ to, children }: ButtonProps) => {
     document.querySelector(to)?.scrollIntoView({ behavior: "smooth" });
   };
 
+  if (contained)
+    return (
+      <>
+        {anchored ? (
+          <StyledContained
+            variant="secondary"
+            role="button"
+            aria-label="Descer até o local"
+            onClick={handleScroll}
+          >
+            <div className="anchored">
+              <div>{children}</div>
+            </div>
+          </StyledContained>
+        ) : (
+          <StyledContained
+            variant="primary"
+            role="button"
+            aria-label="Ir para outra página"
+          >
+            <Link to={to}>
+              <div>{children}</div>
+            </Link>
+          </StyledContained>
+        )}
+      </>
+    );
+
   if (anchored)
     return (
       <StyledButton
         variant="secondary"
         role="button"
-        aria-label="Descer até o conteúdo"
+        aria-label="Descer até o local"
         onClick={handleScroll}
       >
         <div className="anchored">
@@ -51,6 +80,15 @@ const Button = ({ to, children }: ButtonProps) => {
 type StyledButtonProps = {
   variant: "primary" | "secondary";
 };
+
+const StyledContained = styled.div<StyledButtonProps>`
+  display: inline-block;
+  padding: 0.75rem 1rem;
+  font-weight: bolder;
+  background: ${({ theme }) => theme.palette.primary.main};
+  border-radius: 0.5rem;
+  cursor: pointer;
+`;
 
 const StyledButton = styled.div<StyledButtonProps>`
   cursor: pointer;
