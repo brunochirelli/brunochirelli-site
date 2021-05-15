@@ -68,14 +68,6 @@ module.exports = {
         icon: `src/images/brunochirelli-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        typekit: {
-          id: "mxl3jpq",
-        },
-      },
-    },
     `gatsby-plugin-top-layout`,
     {
       resolve: `gatsby-plugin-material-ui`,
