@@ -1,0 +1,21 @@
+@import url("https://use.typekit.net/mxl3jpq.css");
+
+/* GLOBAL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "bely", "serif";
+}
+
+/* HEADER */
+.logo {
+  font-family: "bely-display", "serif";
+}
