@@ -8,6 +8,7 @@ import SEO, { SEOProps } from "./SEO";
 // import UserConsent from "./UserConsent";
 import Header from "./Header";
 import Footer from "./Footer";
+import GoTopButton from "./GoTopButton";
 
 type LayoutProps = {
   children: ReactNode;
@@ -28,7 +29,7 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
     <LayoutStyled fontBase={fontBase}>
       <SEO {...seo} />
       <Header />
-
+      <GoTopButton />
       <main id="content">{children}</main>
 
       {/* <Footer /> */}
@@ -37,6 +38,10 @@ const Layout = ({ children, seo }: LayoutProps): ReactElement => {
 };
 
 const LayoutStyled = styled.div`
+  html {
+    scroll-behavior: smooth;
+  }
+
   .logo {
     font-family: "bely-display", "sans-serif";
   }
