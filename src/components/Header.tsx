@@ -5,7 +5,7 @@ import { Link } from "gatsby-material-ui-components";
 
 const Header = () => {
   return (
-    <StyledNav>
+    <StyledNav id="back-to-top-anchor">
       <ul>
         <li>
           <Link className="logo" to="/">
