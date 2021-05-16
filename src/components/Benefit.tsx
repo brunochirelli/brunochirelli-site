@@ -10,7 +10,7 @@ const Benefit = () => {
     <Container style={{ marginBottom: "3rem", marginTop: "3rem" }}>
       <BenefitWrapper>
         <Grid container spacing={2}>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <ImSearch />
             <h3>Profissional Certificado</h3>
             <p>
@@ -18,7 +18,7 @@ const Benefit = () => {
               doloremque laudantium.
             </p>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <ImSearch />
             <h3>Profissional Certificado</h3>
             <p>
@@ -26,7 +26,7 @@ const Benefit = () => {
               doloremque laudantium.
             </p>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <ImSearch />
             <h3>Profissional Certificado</h3>
             <p>
@@ -34,7 +34,7 @@ const Benefit = () => {
               doloremque laudantium.
             </p>
           </Grid>
-          <Grid item xs={12} md={3}>
+          <Grid item xs={12} sm={6} md={3}>
             <ImSearch />
             <h3>Profissional Certificado</h3>
             <p>
