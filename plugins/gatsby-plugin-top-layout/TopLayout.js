@@ -16,6 +16,8 @@ export default function TopLayout({ children }) {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width"
         />
+        <link rel="preconnect" href="https://use.typekit.net"></link>
+        <link rel="preconnect" href="https://p.typekit.net"></link>
         <link rel="stylesheet" href="https://use.typekit.net/mxl3jpq.css"></link>
       </Helmet>
       <CssBaseline />
