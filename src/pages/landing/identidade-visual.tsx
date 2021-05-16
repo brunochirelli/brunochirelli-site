@@ -8,8 +8,9 @@ import Service from "../../components/Service";
 
 import likeSketch from "../../images/svgs/likeSketch.svg";
 import FormContact from "../../components/FormContact";
-import { Container } from "@material-ui/core";
+import { Container, Grid } from "@material-ui/core";
 import SectionHeader from "../../components/SectionHeader";
+import AboutMe from "../../components/AboutMe";
 
 const IdentidadeVisual = () => {
   return (
@@ -27,9 +28,18 @@ const IdentidadeVisual = () => {
 
       <Service />
 
-      <Container maxWidth="sm" id="id-contato">
-        <SectionHeader title="Entre em Contato" />
-        <FormContact />
+      <AboutMe />
+
+      <Container>
+        <SectionHeader title="Contato" />
+        <Grid container spacing={3}>
+          <Grid item xs={12} md={6} id="id-contato">
+            <FormContact />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            FAQ
+          </Grid>
+        </Grid>
       </Container>
     </Layout>
   );
