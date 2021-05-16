@@ -7,7 +7,7 @@ import { RootState } from "../stores/store";
 import SEO, { SEOProps } from "./SEO";
 // import UserConsent from "./UserConsent";
 import Header from "./Header";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 import GoTopButton from "./GoTopButton";
 
 type LayoutProps = {

@@ -1,17 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
-import { Button, CardActionArea } from "gatsby-material-ui-components";
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image";
 
-import {
-  Box,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@material-ui/core";
+import { Button, CardActionArea } from "gatsby-material-ui-components";
+
+import { Box, Typography } from "@material-ui/core";
 
 type ServiceCardProps = {
   title: string;

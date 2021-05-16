@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { StaticImage } from "gatsby-plugin-image";
 
 import { Container, Grid, Hidden } from "@material-ui/core";
 
@@ -11,6 +10,7 @@ import Resume from "../components/Resume";
 import manSketch from "../images/svgs/manSketch.svg";
 import ideaSketch from "../images/svgs/ideaSketch.svg";
 import SectionHeader from "../components/SectionHeader";
+import AboutMe from "../components/AboutMe";
 
 /**
  * About Page
@@ -19,7 +19,7 @@ import SectionHeader from "../components/SectionHeader";
  * @keywords
  */
 
-type AboutPageProps = {};
+// type AboutPageProps = {};
 
 const AboutPage = () => {
   return (
@@ -65,6 +65,8 @@ const AboutPage = () => {
           </Hidden>
         </Grid>
       </StyledContainer>
+
+      <AboutMe />
 
       <SectionHeader title="Resumé" />
 

@@ -26,10 +26,10 @@ const FeatureSection = ({
   ctaText = "Veja mais projetos",
   projectTitle1,
   projectSlug1,
-  projectImage1,
+  // projectImage1,
+  // projectImage2,
   projectTitle2,
   projectSlug2,
-  projectImage2,
 }: FeatureSectionProps) => {
   return (
     <StyledContainer>

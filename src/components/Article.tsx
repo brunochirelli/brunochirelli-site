@@ -5,11 +5,11 @@ import { Container, Grid } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { RootState } from "../stores/store";
 
-type ArticleProps = {
-  html?: any;
-};
+// type ArticleProps = {
+//   html?: any;
+// };
 
-const Article = ({ html }: ArticleProps) => {
+const Article = () => {
   const fontBase = useSelector((state: RootState) => state.theme.fontBase);
 
   return (
