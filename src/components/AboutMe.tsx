@@ -1,43 +1,41 @@
 import React from "react";
 import styled from "styled-components";
-
-import { Container } from "@material-ui/core";
+import { StaticImage } from "gatsby-plugin-image";
 
 import Button from "./Button";
 
-import google from "../images/svgs/logos/google.svg";
-import facebook from "../images/svgs/logos/facebook.svg";
-import linkedin from "../images/svgs/logos/linkedin.svg";
-import hubspot from "../images/svgs/logos/hubspot.svg";
-import semrush from "../images/svgs/logos/semrush.svg";
-
 const AboutMe = () => {
   return (
-    <Container>
-      <StyledSection>
-        <div>
-          <img
-            className="round-picture"
-            src="https://images.unsplash.com/photo-1523215108660-3fdf7932d7a5?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1345&q=80"
-            alt="Bruno Chirelli"
-          />
-        </div>
-        <div className="name">Bruno Chirelli</div>
-        <h2>
-          Publicitário e Designer de Experiência certificado pelas maiores empresas do
-          mercado
-        </h2>
-        <Button to="/sobre">Conheça mais sobre sim</Button>
-        <br />
-        <div className="logos">
-          <img src={google} alt="" />
-          <img src={facebook} alt="" />
-          <img src={linkedin} alt="" />
-          <img src={hubspot} alt="" />
-          <img src={semrush} alt="" />
-        </div>
-      </StyledSection>
-    </Container>
+    <StyledSection id="about">
+      <div>
+        <StaticImage
+          className="round-picture"
+          src="../images/png/bruno_square.jpg"
+          alt="Bruno Chirelli"
+          objectFit="contain"
+          objectPosition="center"
+        />
+      </div>
+      <div className="name">Bruno Chirelli</div>
+      <h2>
+        Publicitário e Designer de Experiência certificado pelas maiores empresas do
+        mercado
+      </h2>
+      <Button to="/sobre">Conheça mais sobre sim</Button>
+      <br />
+      <div className="logos">
+        <StaticImage src="../images/png/logos/google.png" alt="" objectFit="contain" />
+        <StaticImage
+          src="../images/png/logos/facebook.png"
+          alt=""
+          objectFit="contain"
+          width={145}
+        />
+        <StaticImage src="../images/png/logos/linkedin.png" alt="" objectFit="contain" />
+        <StaticImage src="../images/png/logos/hubspot.png" alt="" objectFit="contain" />
+        <StaticImage src="../images/png/logos/semrush.png" alt="" objectFit="contain" />
+      </div>
+    </StyledSection>
   );
 };
 
