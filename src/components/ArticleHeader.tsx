@@ -1,26 +1,28 @@
 import { Container, Grid } from "@material-ui/core";
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from "react";
 import styled from "styled-components";
 
-const ArticleHeader = () => {
+type ArticleHeaderProps = {
+  title: string;
+  category: string;
+  lead: string;
+  image: any;
+};
+
+const ArticleHeader = ({ title, category, lead, image }: ArticleHeaderProps) => {
   return (
     <StyledHeader>
       <Container>
         <Grid container alignItems="center" justify="space-between" spacing={2}>
           <Grid className="intro-text" item xs={12} sm={5}>
-            <small className="category">Identidade Visual</small>
-            <h1>Desenvolvendo uma nova versão de uma comunidade atlética</h1>
-            <p className="lead">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
-            </p>
+            <small className="category">{category}</small>
+            <h1>{title}</h1>
+            <p className="lead">{lead}</p>
             <small>9 de dezembro de 2020 - 3 minutos</small>
           </Grid>
           <Grid className="featured-image" item xs={12} sm={6}>
-            <img
-              src="https://images.unsplash.com/photo-1598136490929-292a0a7890c2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1349&q=80"
-              alt=""
-            />
+            <GatsbyImage image={image.childImageSharp.gatsbyImageData} alt="" />
           </Grid>
         </Grid>
       </Container>

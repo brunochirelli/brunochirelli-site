@@ -1,6 +1,13 @@
 /* GLOBAL */
-html {
-  scroll-behavior: smooth;
+.jump-to-content {
+  position: absolute;
+  top: -10%;
+  color: black;
+}
+
+.jump-to-content:active,
+.jump-to-content:focus {
+  top: 0;
 }
 
 /* HEADINGS */

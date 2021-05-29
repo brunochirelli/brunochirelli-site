@@ -1,12 +1,15 @@
 import React from "react";
+
+import { Container } from "@material-ui/core";
+
 import AboutMe from "../components/AboutMe";
 import FeatureSection from "../components/FeatureSection";
 import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
-import Resume from "../components/Resume";
+// import Resume from "../components/Resume";
 import SectionHeader from "../components/SectionHeader";
 
-import likeSketch from "../images/svgs/likeSketch.svg";
+import useAllPngs from "../queries/useAllPngs";
 
 /**
  * Home Page
@@ -16,6 +19,8 @@ import likeSketch from "../images/svgs/likeSketch.svg";
  */
 
 const IndexPage = () => {
+  const likeSketch = useAllPngs("likeSketch.png");
+
   return (
     <Layout seo={{ title: "Home Page SEO" }}>
       <PageHeader
@@ -34,7 +39,7 @@ const IndexPage = () => {
         projectTitle2="Flexsun"
         projectSlug2="flexsun"
       />
-      <FeatureSection
+      {/* <FeatureSection
         title="Web Design"
         lead="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
         slug="web-design"
@@ -42,15 +47,17 @@ const IndexPage = () => {
         projectSlug1="flexsun"
         projectTitle2="Flexsun"
         projectSlug2="flexsun"
-      />
+      /> */}
 
-      <AboutMe />
+      <Container>
+        <AboutMe />
+      </Container>
 
-      <br />
+      {/* <br />
       <br />
       <Resume />
       <br />
-      <br />
+      <br /> */}
     </Layout>
   );
 };

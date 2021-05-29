@@ -1,15 +1,23 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { Container, Grid } from "@material-ui/core";
 
 import Layout from "../components/Layout";
 import PageHeader from "../components/PageHeader";
 import SectionHeader from "../components/SectionHeader";
+import useAllPngs from "../queries/useAllPngs";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-import caseSketch from "../images/svgs/caseSketch.svg";
+type PortfolioPageProps = {
+  data: any;
+};
 
-const PortfolioPage = () => {
+const PortfolioPage = ({ data }: PortfolioPageProps) => {
+  const caseSketch = useAllPngs("caseSketch.png");
+
+  const portfolio = data.allMarkdownRemark.edges;
+
   const projects = [
     { title: "Flexsun" },
     { title: "Fazenda dos Turcos" },
@@ -23,17 +31,27 @@ const PortfolioPage = () => {
 
       <Container>
         <StyledGrid container justify="space-around" spacing={3}>
-          {projects.map((project, i) => (
-            <Grid className="project-card" item xs={12} sm={5} key={i}>
-              <Link to="/portfolio/single">
-                <img
-                  src="https://images.unsplash.com/photo-1585399000684-d2f72660f092?ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+          {portfolio.map((project: any, i: number) => (
+            <Grid
+              className="project-card"
+              item
+              xs={12}
+              sm={5}
+              key={project.node.frontmatter.title + i}
+            >
+              <Link to={`/portfolio/${project.node.frontmatter.slug}`}>
+                <GatsbyImage
+                  image={
+                    project.node.frontmatter.featuredImage.childImageSharp.gatsbyImageData
+                  }
                   alt=""
                 />
               </Link>
 
               <h2>
-                <Link to="/portfolio/single">{project.title}</Link>
+                <Link to={`/portfolio/${project.node.frontmatter.slug}`}>
+                  {project.node.frontmatter.title}
+                </Link>
               </h2>
             </Grid>
           ))}
@@ -81,6 +99,34 @@ const StyledGrid = styled(Grid)`
 
       &:nth-of-type(even) {
         top: 5rem;
+      }
+    }
+  }
+`;
+
+export const query = graphql`
+  {
+    allMarkdownRemark(filter: { frontmatter: { type: { eq: "portfolio" } } }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+            category
+            type
+            lead
+            featuredImage {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+            images {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+        }
       }
     }
   }

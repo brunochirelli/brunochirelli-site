@@ -7,12 +7,12 @@ const Copyright = () => {
 
   return (
     <>
-      <div className="copyright" style={{ background: blueGrey[800] }}>
+      <div className="copyright">
         <Typography
           align="center"
           variant="overline"
           component="div"
-          style={{ color: blueGrey[100], fontSize: "0.6rem" }}
+          style={{ color: "black", fontSize: "0.6rem" }}
         >
           Bruno Chirelli {date.getFullYear()} - Todos os direitos reservados
         </Typography>

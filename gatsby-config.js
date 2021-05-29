@@ -17,7 +17,7 @@ module.exports = {
   flags: {
     PRESERVE_WEBPACK_CACHE: true,
     FAST_DEV: true,
-    DEV_SSR: true,
+    // DEV_SSR: true,
   },
   plugins: [
     // {
@@ -50,8 +50,22 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/src/content`,
+        name: `blog`,
+        path: `${__dirname}/src/content/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/src/content/portfolio`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/content/pages`,
       },
     },
     `gatsby-plugin-sharp`,
@@ -82,7 +96,12 @@ module.exports = {
       resolve: `gatsby-theme-material-ui`,
       options: {},
     },
-    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        ssr: true,
+      },
+    },
     {
       resolve: "gatsby-plugin-eslint",
       options: {
@@ -115,6 +134,7 @@ module.exports = {
         },
       },
     },
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
     // `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline

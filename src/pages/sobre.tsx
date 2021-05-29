@@ -11,6 +11,7 @@ import manSketch from "../images/svgs/manSketch.svg";
 import ideaSketch from "../images/svgs/ideaSketch.svg";
 import SectionHeader from "../components/SectionHeader";
 import AboutMe from "../components/AboutMe";
+import useAllPngs from "../queries/useAllPngs";
 
 /**
  * About Page
@@ -22,6 +23,8 @@ import AboutMe from "../components/AboutMe";
 // type AboutPageProps = {};
 
 const AboutPage = () => {
+  const manSketch = useAllPngs("manSketch.png");
+
   return (
     <Layout seo={{ title: "Sobre - Bruno Chirelli" }}>
       <PageHeader
@@ -66,7 +69,9 @@ const AboutPage = () => {
         </Grid>
       </StyledContainer>
 
-      <AboutMe />
+      <Container>
+        <AboutMe />
+      </Container>
 
       <SectionHeader title="Resumé" />
 

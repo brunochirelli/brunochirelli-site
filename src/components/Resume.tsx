@@ -18,67 +18,77 @@ const Resume = () => {
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Jornal Folha Cidade</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>07/2009 - 07/2013</div>
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
+              Diretor de arte responsável pela diagramação, arte de anúncios e fechamento.
             </p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Agência Trans Design</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>07/2013 - 07/2014</div>
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
+              Designer responsável por desenvolvimento de identidades visuais e criação de
+              sites em WordPress.
             </p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>SESC Piracicaba</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>01/2015 - 01/2017</div>
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
+              Estagiário do setor de comunicação. Responsável pela diagramação do caderno
+              mensal, aplicação de identidades visuais, posts para redes sociais e
+              materiais gráficos para projetos da unidade.
             </p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
-            <h3>Azoon Propaganda</h3>
-            <div>06/2010 - 06/2014</div>
+            <h3>Agência Azoon Propaganda</h3>
+            <div>01/2017 - 07/2017</div>
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
+              Diretor de arte responsável pelo departamento de design, desenvolvimento de
+              planejamentos, pesquisas e suporte ao atendimento com o cliente.
             </p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Web & Designer Freelancer</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>01/2013 - Momento</div>
           </Grid>
           <Grid item xs={12} md={6}>
             <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
+              Designer e desenvolvedor freelancer. Desenvolvo identidades visuais,
+              websites (frontend React com Gatsby e backend com headless CMSs), campanhas
+              digitais, gestão de SEO e conteúdo além de criação de reports de ferramentas
+              de analytics como o Google Analytics e softwares de gestão de SEO.
             </p>
           </Grid>
         </Grid>
 
         {/* Formação */}
 
-        <Grid className="section" item container xs={12} sm={6} spacing={2}>
+        <Grid
+          className="section"
+          item
+          container
+          xs={12}
+          sm={6}
+          spacing={2}
+          alignContent="flex-start"
+        >
           {/* título */}
           <Grid item xs={12} md={6}>
             <h2>Formação</h2>
@@ -88,63 +98,50 @@ const Resume = () => {
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Publicidade e Propaganda</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>UNIMEP</div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
-            </p>
+            <p>Bacharel em comunicação com ênfase em publicidade e propaganda.</p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>UX Design</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>Google</div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
-            </p>
+            <p>UX Designer pelo Google em Coursera.</p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Desenvolvimento Frontend</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>Linkedin, Udemy, Livros</div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
-            </p>
+            <p>Autodidata por cursos no Linkedin Learning, Udemy e livros do assunto.</p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Search Engine Optimization</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>SEMRush, HubSpot</div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
-            </p>
+            <p>Consultor de SEO certificado pelo SEMRush e Hubspot.</p>
           </Grid>
 
           {/* conteúdo */}
           <Grid className="title" item xs={12} md={6}>
             <h3>Search Marketing e PPC</h3>
-            <div>06/2010 - 06/2014</div>
+            <div>Google e Facebook</div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-              doloremque laudantium.
-            </p>
+            <p>Certificado pelas plataformas Google Ads Academy e Facebook Blueprint.</p>
           </Grid>
         </Grid>
+
+        {/* idioma */}
       </Grid>
     </StyledContainer>
   );

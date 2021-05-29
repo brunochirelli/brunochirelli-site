@@ -9,6 +9,15 @@ interface IFormInputs {
   project: string;
   companyName: string;
   companyWebsite: string;
+  products: "basic" | "default" | "premium";
+  isLogo?: boolean;
+  checkLogo?: boolean;
+  checkSocial?: boolean;
+  checkGuideline?: boolean;
+  checkSite?: boolean;
+  checkLanding?: boolean;
+  checkNewsletter?: boolean;
+  checkBlog?: boolean;
 }
 
 function encode(data: any) {
@@ -107,19 +116,55 @@ const FormContact = () => {
       </fieldset>
 
       <fieldset>
-        {/* <h2>Com o que posso te ajudar?</h2>
-        <div className="input-wrapper">
-          <input
-            {...register("check")}
-          
-            placeholder="Descreva seu projeto..."
-            data-empty={!watch("check")}
-          />
+        <h2>Quais os itens que precisa?</h2>
+        <div className="check-wrapper">
+          <input {...register("checkLogo")} type="checkbox" id="checkLogo" />
+          <label className="opt" htmlFor="checkLogo">
+            Logotipo
+          </label>
+        </div>
+        <div className="check-wrapper">
+          <input {...register("checkGuideline")} type="checkbox" id="checkGuideline" />
+          <label className="opt" htmlFor="checkGuideline">
+            Manual de Marca
+          </label>
+        </div>
+        <div className="check-wrapper">
+          <input {...register("checkSite")} type="checkbox" id="checkSite" />
+          <label className="opt" htmlFor="checkSite">
+            Website
+          </label>
+        </div>
+        <div className="check-wrapper">
+          <input {...register("checkLanding")} type="checkbox" id="checkLanding" />
+          <label className="opt" htmlFor="checkLanding">
+            Landing Page
+          </label>
+        </div>
+        <div className="check-wrapper">
+          <input {...register("checkNewsletter")} type="checkbox" id="checkNewsletter" />
+          <label className="opt" htmlFor="checkNewsletter">
+            Template Newsletter
+          </label>
+        </div>
+        <div className="check-wrapper">
+          <input {...register("checkBlog")} type="checkbox" id="checkBlog" />
+          <label className="opt" htmlFor="checkBlog">
+            Blog
+          </label>
+        </div>
+
+        {/* <div className="check-wrapper">
+          <select {...register("products")}>
+            <option value="basic">Pacote Básico</option>
+            <option value="default">Pacote Padrão</option>
+            <option value="premium">Pacote Premium</option>
+          </select>
         </div> */}
       </fieldset>
 
       <button type="submit" disabled={submiting}>
-        Submit
+        Enviar
       </button>
     </StyledForm>
   );
@@ -143,7 +188,8 @@ const StyledForm = styled.form`
       position: relative;
       overflow: hidden;
 
-      input,
+      input[type="text"],
+      input[type="email"],
       textarea {
         width: 100%;
         margin-bottom: 0.5rem;
@@ -181,7 +227,7 @@ const StyledForm = styled.form`
         visibility: hidden;
       }
 
-      label,
+      label:not(.opt),
       textarea::placeholder {
         position: absolute;
         top: 50%;
@@ -205,6 +251,32 @@ const StyledForm = styled.form`
         }
       }
     }
+    .check-wrapper {
+      display: flex;
+      align-items: center;
+
+      /* Checkbox */
+      input[type="checkbox"] {
+        width: 2.5em;
+        height: 2.5em;
+
+        & + label {
+          padding: 0 0.5rem;
+        }
+      }
+    }
+  }
+
+  button {
+    margin: 1rem auto;
+    padding: 0.5rem 1.5rem;
+    color: ${({ theme }) => theme.palette.primary.main};
+    font-weight: bolder;
+    font-size: 1.25em;
+    font-family: "bely", "sans-serif";
+    border: 0.15rem solid ${({ theme }) => theme.palette.primary.main};
+    border-radius: 0.25rem;
+    cursor: pointer;
   }
 `;
 

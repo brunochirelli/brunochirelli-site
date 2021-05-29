@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Container } from "@material-ui/core";
 
 import Button from "./Button";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 type PageHeaderProps = {
   /**
@@ -33,10 +34,20 @@ const PageHeader = ({
   hideCta,
 }: PageHeaderProps) => {
   return (
-    <StyledHeader sketch={sketch}>
+    <StyledHeader>
       <Container>
         <StyledContent>
-          {sketch && <img className="sketch" src={sketch} alt="" />}
+          {sketch && (
+            <div>
+              <GatsbyImage
+                className="sketch"
+                image={sketch}
+                alt=""
+                objectFit="contain"
+                objectPosition="center"
+              />
+            </div>
+          )}
           <h1>{title}</h1>
           {!hideCta && <Button to={ctaLink}>{ctaText}</Button>}
         </StyledContent>
@@ -45,14 +56,7 @@ const PageHeader = ({
   );
 };
 
-type StyledHeaderProps = {
-  /**
-   * Helps decide which padding the component will use if a sketch is present or not
-   */
-  sketch?: boolean;
-};
-
-const StyledHeader = styled.header<StyledHeaderProps>`
+const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   padding-top: 6rem;
@@ -61,7 +65,7 @@ const StyledHeader = styled.header<StyledHeaderProps>`
   background: #f4f2ec;
 
   @media screen and (min-width: 600px) {
-    padding-top: ${({ sketch }) => (sketch ? `8rem` : `4rem`)};
+    padding-top: 8rem;
   }
 `;
 
@@ -84,11 +88,13 @@ const StyledContent = styled.div`
   }
 
   img {
-    max-height: 4rem;
-    margin-top: 1rem;
+    max-height: 100%;
+  }
+
+  div > img {
+    margin-top: 2rem;
 
     @media screen and (min-width: 600px) {
-      max-height: 100%;
       margin-top: 0;
     }
   }

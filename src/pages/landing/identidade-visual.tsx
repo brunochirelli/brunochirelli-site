@@ -1,24 +1,26 @@
 import React from "react";
 
+import { Container, Grid } from "@material-ui/core";
+
 import Layout from "../../components/Layout";
 import PageHeader from "../../components/PageHeader";
 import PortfolioRow from "../../components/PortfolioRow";
 import Benefit from "../../components/Benefit";
 import Service from "../../components/Service";
-
-import likeSketch from "../../images/svgs/likeSketch.svg";
-import FormContact from "../../components/FormContact";
-import { Container, Grid } from "@material-ui/core";
 import SectionHeader from "../../components/SectionHeader";
+import FormContact from "../../components/FormContact";
 import AboutMe from "../../components/AboutMe";
+import useAllPngs from "../../queries/useAllPngs";
 
 const IdentidadeVisual = () => {
+  const likeSketch = useAllPngs("likeSketch.png");
+
   return (
-    <Layout>
+    <Layout landing="identidade">
       <PageHeader
         title="Desenvolvimento de Identidades Visuais Digitais para empresas que querem divulgar em redes sociais e mecanismos de busca"
         sketch={likeSketch}
-        ctaLink="#servicos"
+        ctaLink="#services"
         ctaText="Conheça meus serviços"
       />
 
@@ -28,18 +30,13 @@ const IdentidadeVisual = () => {
 
       <Service />
 
-      <AboutMe />
-
       <Container>
+        <AboutMe />
+      </Container>
+
+      <Container maxWidth="sm">
         <SectionHeader title="Contato" />
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={6} id="id-contato">
-            <FormContact />
-          </Grid>
-          <Grid item xs={12} md={6}>
-            FAQ
-          </Grid>
-        </Grid>
+        <FormContact />
       </Container>
     </Layout>
   );

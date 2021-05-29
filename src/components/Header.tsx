@@ -3,7 +3,42 @@ import styled from "styled-components";
 
 import { Link } from "gatsby-material-ui-components";
 
-const Header = () => {
+type HeaderProps = {
+  landing?: "identidade";
+};
+
+const Header = ({ landing }: HeaderProps) => {
+  const handleClick = (anchor: string): any => {
+    if (typeof window !== "undefined") {
+      document.getElementById(anchor)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  if (landing === "identidade") {
+    return (
+      <StyledNav id="back-to-top-anchor">
+        <ul>
+          <li>
+            <a className="logo" onClick={() => handleClick("back-to-top-anchor")}>
+              Bruno Chirelli
+            </a>
+          </li>
+          <li>
+            <a onClick={() => handleClick("about")}>Sobre</a>
+          </li>
+          <li>
+            <a onClick={() => handleClick("services")}>Serviços</a>
+          </li>
+          <li>
+            <a onClick={() => handleClick("portfolio")}>Portfolio</a>
+          </li>
+          <li>
+            <a onClick={() => handleClick("form-contact")}>Contato</a>
+          </li>
+        </ul>
+      </StyledNav>
+    );
+  }
   return (
     <StyledNav id="back-to-top-anchor">
       <ul>
@@ -53,6 +88,7 @@ const StyledNav = styled.nav`
 
       a {
         color: ${({ theme }) => theme.palette.secondary.main};
+        cursor: pointer;
       }
 
       &:first-of-type {

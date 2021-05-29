@@ -4,10 +4,12 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { RootState } from "../stores/store";
 
+import { Link } from "gatsby-material-ui-components";
+
 import SEO, { SEOProps } from "./SEO";
 // import UserConsent from "./UserConsent";
 import Header from "./Header";
-// import Footer from "./Footer";
+import Footer from "./Footer";
 import GoTopButton from "./GoTopButton";
 
 type LayoutProps = {
@@ -20,32 +22,31 @@ type LayoutProps = {
    * @example <Layout seo={{title: 'Page Title'}}>...</Layout>
    */
   seo?: SEOProps;
+  /**
+   * Forward prop to header
+   */
+  landing?: "identidade";
 };
 
-const Layout = ({ children, seo }: LayoutProps): ReactElement => {
+const Layout = ({ children, seo, landing }: LayoutProps): ReactElement => {
   const fontBase = useSelector((state: RootState) => state.theme.fontBase);
 
   return (
     <LayoutStyled fontBase={fontBase}>
+      <Link to="#content" className="jump-to-content" tabIndex={1}>
+        Ir para conteúdo
+      </Link>
       <SEO {...seo} />
-      <Header />
+      <Header landing={landing} />
       <GoTopButton />
       <main id="content">{children}</main>
 
-      {/* <Footer /> */}
+      <Footer />
     </LayoutStyled>
   );
 };
 
 const LayoutStyled = styled.div`
-  html {
-    scroll-behavior: smooth;
-  }
-
-  .logo {
-    font-family: "bely-display", "sans-serif";
-  }
-
   z-index: ${({ theme }) => theme.zIndex.default};
   color: ${({ theme }) => theme.palette.secondary.main};
   font-size: ${({ fontBase }: { fontBase: number }) => fontBase}px;

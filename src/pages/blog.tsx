@@ -6,9 +6,11 @@ import PageHeader from "../components/PageHeader";
 import SectionHeader from "../components/SectionHeader";
 import ArticleCard from "../components/ArticleCard";
 
-import lightSketch from "../images/svgs/lightSketch.svg";
+import useAllPngs from "../queries/useAllPngs";
 
 const BlogPage = () => {
+  const lightSketch = useAllPngs("lightSketch.png");
+
   const articles = [
     {
       title:

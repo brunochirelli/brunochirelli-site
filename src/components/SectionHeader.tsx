@@ -1,14 +1,23 @@
+import { Container } from "@material-ui/core";
 import React from "react";
 import styled from "styled-components";
 
 type SectionHeaderProps = {
   title: string;
+  lead?: string;
 };
 
-const SectionHeader = ({ title }: SectionHeaderProps) => {
+const SectionHeader = ({ title, lead }: SectionHeaderProps) => {
   return (
     <StyledDiv>
-      <h1 className="section-header">{title}</h1>
+      <Container>
+        <h1 className="section-header">{title}</h1>
+        {lead && (
+          <p className="lead">
+            Crio identidades visuais que se adaptem a estratégia do seu negócio
+          </p>
+        )}
+      </Container>
     </StyledDiv>
   );
 };

@@ -44,9 +44,9 @@ const StyledDiv = styled.div`
   Hide on mobiles
   Accessible options will be handled on overlay menu
  */
-  @media screen and (min-width: ${({ theme }) => theme.breakpoints.values.md}px) {
+  /* @media screen and (min-width: ${({ theme }) => theme.breakpoints.values.md}px) {
     display: block;
-  }
+  } */
 
   display: none;
   font-size: 0.7rem;
