@@ -1,0 +1,14 @@
+:root {
+  /* colors */
+  --color-yellow: #ede73b;
+
+  /* typography */
+  --font-main: "Overpass", sans-serif;
+  --font-heading: "Fraunces", serif;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-main);
+  background: #fbfbfb;
+}

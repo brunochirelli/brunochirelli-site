@@ -1,143 +1,30 @@
-const {
-  NODE_ENV,
-  URL: NETLIFY_SITE_URL = "https://brunochirelli.com.br",
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV,
-} = process.env;
-const isNetlifyProduction = NETLIFY_ENV === "production";
-const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
-
 module.exports = {
   siteMetadata: {
-    title: `Bruno Chirelli Freelancer`,
-    description: `Designer Freelancer`,
-    author: `@brunochirelli`,
-    siteUrl,
-  },
-  flags: {
-    PRESERVE_WEBPACK_CACHE: true,
-    FAST_DEV: true,
-    // DEV_SSR: true,
+    title: "brunochirelli",
   },
   plugins: [
-    // {
-    //   resolve: "gatsby-plugin-gdpr-tracking",
-    //   options: {
-    //     debug: false,
-    //     googleAnalytics: {
-    //       // The property ID; the tracking code won't be generated without it.
-    //       trackingId: "G-T40HQ90X4S",
-    //       // Defines it google analytics should be started with out the cookie consent
-    //       autoStart: false,
-    //       // Setting this parameter is optional
-    //       anonymize: true, // <--- default
-    //       // Name of the cookie, that enables the tracking if it is true
-    //       controlCookieName: "gdpr-analytics-enabled", // <--- default
-    //       cookieFlags: "secure;samesite=none", // <--- default,
-    //     },
-    //     environments: ["production"], // default
-    //   },
-    // },
-
-    `gatsby-plugin-image`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/src/content/blog`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `portfolio`,
-        path: `${__dirname}/src/content/portfolio`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `pages`,
-        path: `${__dirname}/src/content/pages`,
-      },
-    },
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-remark`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `bruno-chirelli-freelancer`,
-        short_name: `brunochirelli`,
-        start_url: `/`,
-        background_color: `#ffffff`,
-        theme_color: `#8bc34a`,
-        display: `minimal-ui`,
-        icon: `src/images/brunochirelli-icon.png`, // This path is relative to the root of the site.
-      },
-    },
-    `gatsby-plugin-top-layout`,
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
-    },
-    {
-      resolve: `gatsby-theme-material-ui`,
-      options: {},
-    },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        ssr: true,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-eslint",
-      options: {
-        stages: ["develop"],
-        extensions: ["js", "jsx", "tsx"],
-        exclude: ["node_modules", ".cache", "public"],
-        // Any eslint-webpack-plugin options below
-      },
-    },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-plugin-robots-txt",
+      resolve: "gatsby-source-filesystem",
       options: {
-        resolveEnv: () => NETLIFY_ENV,
-        env: {
-          production: {
-            policy: [{ userAgent: "*" }],
-          },
-          "branch-deploy": {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
-            sitemap: null,
-            host: null,
-          },
-          "deploy-preview": {
-            policy: [{ userAgent: "*", disallow: ["/"] }],
-            sitemap: null,
-            host: null,
-          },
-        },
+        name: "images",
+        path: "./src/images/",
       },
+      __key: "images",
     },
-    `gatsby-plugin-webpack-bundle-analyser-v2`,
-    // `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
   ],
 };
