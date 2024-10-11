@@ -93,56 +93,7 @@ const CriacaoSites = () => {
                         </HideContent>
                     </Grid>
                     <Grid item xs={12} md={5}>
-                        <Box className="sticky">
-                            <PromotionCard
-                                products={[
-                                    {
-                                        tabTitle: 'Básico',
-                                        title: 'Uma página',
-                                        description:
-                                            'Uma página ideal para landing pages, apresentar serviços ou produtos ou testar ideias.',
-                                        price: 'R$ 400,00',
-                                        features: [
-                                            'Site estático JAMStack',
-                                            '1 página',
-                                            'Rápido',
-                                            'Responsivo',
-                                            'Design customizado',
-                                            'Código limpo sob medida',
-                                        ],
-                                    },
-                                    {
-                                        tabTitle: 'Padrão',
-                                        title: 'Multi-página',
-                                        description: 'Ideal para um pequeno site institucional.',
-                                        price: 'R$ 1.490,00',
-                                        features: [
-                                            'Site estático JAMStack',
-                                            '5-8 páginas',
-                                            'Rápido',
-                                            'Responsivo',
-                                            'Design customizado',
-                                            'Código limpo sob medida',
-                                        ],
-                                    },
-                                    {
-                                        tabTitle: 'Premium',
-                                        title: 'Multi-página com CMS',
-                                        description:
-                                            'Ideal para um blog ou sites que possuem a necessidade de modificar o conteúdo constantemente.',
-                                        price: 'R$ 2.980,00',
-                                        features: [
-                                            'Site estático JAMStack',
-                                            'Até 12 páginas',
-                                            'Rápido',
-                                            'Responsivo',
-                                            'Design customizado',
-                                            'Código limpo sob medida',
-                                        ],
-                                    },
-                                ]}
-                            />
-                        </Box>
+                        <Box className="sticky"></Box>
                     </Grid>
                 </Grid>
             </Container>

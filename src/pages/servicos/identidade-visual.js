@@ -107,47 +107,7 @@ const IdentidadeVisual = () => {
                         </HideContent>
                     </Grid>
                     <Grid item xs={12} md={5}>
-                        <Box className="sticky">
-                            <PromotionCard
-                                products={[
-                                    {
-                                        tabTitle: 'Básico',
-                                        title: 'Identidade Visual Simples',
-                                        description:
-                                            'Para empresas que não querem gastar muito mas querem se destacar diante da concorrência com uma identidade sólida.',
-                                        price: 'R$ 1.280,00',
-                                        features: ['Logotipo', 'Manual de Marca', 'Cartão de Visitas'],
-                                    },
-                                    {
-                                        tabTitle: 'Padrão',
-                                        title: 'Identidade Visual Padrão',
-                                        description:
-                                            'Para empresas preocupadas em entregar valor superior para seus clientes.',
-                                        price: 'R$ 1.680,00',
-                                        features: [
-                                            'Logotipo',
-                                            'Manual de Marca',
-                                            'Papelaria básica (cartão e 1 item de papelaria)',
-                                            '1 modelo de uniforme',
-                                        ],
-                                    },
-                                    {
-                                        tabTitle: 'Premium',
-                                        title: 'Identidade Visual Premium',
-                                        description:
-                                            'Para empresas que reconhecem a importância do design para os objetivos de negócios e querem garantir experiência completa, robusta e personalizada em torno de sua identidade visual.',
-                                        price: 'R$ 1.980,00',
-                                        features: [
-                                            'Logotipo',
-                                            'Manual de Marca',
-                                            'Papelaria básica (cartão e 2 itens de papelaria)',
-                                            '1 modelo de uniforme',
-                                            '1 modelo de brinde ou outra peça a combinar',
-                                        ],
-                                    },
-                                ]}
-                            />
-                        </Box>
+                        <Box className="sticky"></Box>
                     </Grid>
                 </Grid>
             </Container>
