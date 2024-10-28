@@ -1,0 +1,12 @@
+name: Lint and test
+description: Lint and test code
+
+runs:
+  using: "composite"
+  steps:
+    - name: Lint code
+      run: pnpm lint
+      shell: bash
+    - name: Run tests
+      run: pnpm test
+      shell: bash
