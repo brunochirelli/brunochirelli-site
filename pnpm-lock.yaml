@@ -7,6 +7,9 @@ settings:
 importers:
   .:
     dependencies:
+      "@netlify/plugin-nextjs":
+        specifier: ^5.8.1
+        version: 5.8.1
       "@tanstack/react-query":
         specifier: ^5.51.15
         version: 5.51.15(react@18.3.1)
@@ -2594,6 +2597,13 @@ packages:
         integrity: sha512-3fkKj25kEjsfObL6IlKPAlHYPq/oYwUkkQ03zsTTiDjD7vg/RxjdiLeCydqtxHZP0JgsXL3D/X5oAkMGzuUp/Q==,
       }
     engines: { node: ">=12" }
+
+  "@netlify/plugin-nextjs@5.8.1":
+    resolution:
+      {
+        integrity: sha512-WB1N0FslhWZ1yAVYTcB6CcFrFOUSQ0O2LfavYZrbAypeNxu2I+oO+cgmhfDgZ8Eoq1g4EMeoIGMkNoZ4ogZTsg==,
+      }
+    engines: { node: ">=18.0.0" }
 
   "@next/env@14.2.7":
     resolution:
@@ -17480,6 +17490,8 @@ snapshots:
       tslib: 2.6.3
 
   "@n1ru4l/push-pull-async-iterable-iterator@3.2.0": {}
+
+  "@netlify/plugin-nextjs@5.8.1": {}
 
   "@next/env@14.2.7": {}
 

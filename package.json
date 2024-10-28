@@ -22,6 +22,7 @@
     ]
   },
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.8.1",
     "@tanstack/react-query": "^5.51.15",
     "@tanstack/react-query-devtools": "^5.51.15",
     "@testing-library/react": "^16.0.0",
