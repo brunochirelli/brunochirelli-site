@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
     "start": "next start",
     "lint": "lint-staged",
     "lint:css": "stylelint '**/*.{css,scss}' --fix",
@@ -32,6 +32,7 @@
     "next-router-mock": "^0.9.13",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "tinacms": "^2.3.0",
     "vite-tsconfig-paths": "^4.3.2"
   },
   "devDependencies": {
@@ -47,7 +48,8 @@
     "@storybook/test": "^8.2.6",
     "@tanstack/eslint-plugin-query": "^5.51.15",
     "@testing-library/jest-dom": "^6.4.8",
-    "@types/node": "^20",
+    "@tinacms/cli": "^1.6.10",
+    "@types/node": "^20.14.12",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
