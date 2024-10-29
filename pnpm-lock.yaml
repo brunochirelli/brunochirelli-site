@@ -64,6 +64,12 @@ importers:
       next-themes:
         specifier: ^0.3.0
         version: 0.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      posthog-js:
+        specifier: ^1.177.0
+        version: 1.177.0
+      posthog-node:
+        specifier: ^4.2.1
+        version: 4.2.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -91,7 +97,7 @@ importers:
         version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))
       "@storybook/addon-interactions":
         specifier: ^8.2.6
-        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))
+        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))
       "@storybook/addon-links":
         specifier: ^8.2.6
         version: 8.2.6(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))
@@ -103,13 +109,13 @@ importers:
         version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))
       "@storybook/nextjs":
         specifier: ^8.2.6
-        version: 8.2.6(esbuild@0.21.5)(next@15.0.1(@babel/core@7.24.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(type-fest@2.19.0)(typescript@5.5.4)(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))(webpack-hot-middleware@2.26.1)(webpack@5.95.0(esbuild@0.21.5))
+        version: 8.2.6(esbuild@0.21.5)(next@15.0.1(@babel/core@7.24.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(type-fest@2.19.0)(typescript@5.5.4)(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))(webpack-hot-middleware@2.26.1)(webpack@5.95.0(esbuild@0.21.5))
       "@storybook/react":
         specifier: ^8.2.6
         version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(typescript@5.5.4)
       "@storybook/test":
         specifier: ^8.2.6
-        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))
+        version: 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))
       "@tanstack/eslint-plugin-query":
         specifier: ^5.51.15
         version: 5.51.15(eslint@8.57.0)(typescript@5.5.4)
@@ -136,7 +142,7 @@ importers:
         version: 8.4.0(eslint@8.57.0)(typescript@5.5.4)
       "@vitest/coverage-v8":
         specifier: ^2.1.3
-        version: 2.1.3(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))
+        version: 2.1.3(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -146,6 +152,9 @@ importers:
       eslint-plugin-storybook:
         specifier: ^0.8.0
         version: 0.8.0(eslint@8.57.0)(typescript@5.5.4)
+      happy-dom:
+        specifier: ^15.7.4
+        version: 15.7.4
       husky:
         specifier: ^9.1.6
         version: 9.1.6
@@ -187,7 +196,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: ^2.1.3
-        version: 2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3)
+        version: 2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3)
 
 packages:
   "@adobe/css-tools@4.4.0":
@@ -7454,6 +7463,12 @@ packages:
       }
     engines: { node: ">=4" }
 
+  axios@1.7.7:
+    resolution:
+      {
+        integrity: sha512-S4kL7XrjgBmvdGut0sN3yJxqYzrDOnivkBiN0OFs6hLiUam3UPvswUo0kqGyhqUZGEOytHyumEdXsAkgCOUf3Q==,
+      }
+
   axobject-query@3.1.1:
     resolution:
       {
@@ -8396,6 +8411,12 @@ packages:
     resolution:
       {
         integrity: sha512-J/r5JTHSmzTxbiYYrzXg9w1VpqrYt+gexenBE9pugeyhwPZTAEJddyiReJWsLO6uNQ8xJZFbod6XC7KKwatCiA==,
+      }
+
+  core-js@3.38.1:
+    resolution:
+      {
+        integrity: sha512-OP35aUorbU3Zvlx7pjsFdu1rGNnD4pgw/CWoYzRY3t2EzoVT7shKHY1dlAy3f41cGIO7ZDPQimhGFTlEYkG/Hw==,
       }
 
   core-util-is@1.0.3:
@@ -9941,6 +9962,12 @@ packages:
         integrity: sha512-FhbbL55dj/qdVO3YNK7ZEkshvj3eQ7EuIGV2I6ic/2YiocvyWv+7jg2s4AyS0wdRU75s3tA8ZxI/xPigb0v5Aw==,
       }
 
+  fflate@0.4.8:
+    resolution:
+      {
+        integrity: sha512-FJqqoDBR00Mdj9ppamLa/Y7vxm+PRmNWA67N846RvsoYVMKB4q3y/de5PA7gUmRMYK/8CMz2GDZQmCRN1wBcWA==,
+      }
+
   file-entry-cache@6.0.1:
     resolution:
       {
@@ -10118,6 +10145,18 @@ packages:
       {
         integrity: sha512-1td0l3pMkWJLFipobUcGaf+5DTY4PLDDrcqoSaKP8ediO/CoWCCYk/fT/Y2A4e6TNB+Sh6clRJCjOPPnKoNHnQ==,
       }
+
+  follow-redirects@1.15.9:
+    resolution:
+      {
+        integrity: sha512-gew4GsXizNgdoRyqmyfMHyAmXsZDk6mHkSxZFCzW9gwlbtOW44CDtYavM+y+72qD/Vq2l550kMF52DT8fOLJqQ==,
+      }
+    engines: { node: ">=4.0" }
+    peerDependencies:
+      debug: "*"
+    peerDependenciesMeta:
+      debug:
+        optional: true
 
   for-each@0.3.3:
     resolution:
@@ -10519,6 +10558,13 @@ packages:
       {
         integrity: sha512-3GKBOn+m2LX9iq+JC1064cSFprJY4jL1jCXTcpnfER5HYE2l/4EfWSGzkPa/ZDBmYI0ZOEj5VHV/eKnPGkHuOg==,
       }
+
+  happy-dom@15.7.4:
+    resolution:
+      {
+        integrity: sha512-r1vadDYGMtsHAAsqhDuk4IpPvr6N8MGKy5ntBo7tSdim+pWDxus2PNqOcOt8LuDZ4t3KJHE+gCuzupcx/GKnyQ==,
+      }
+    engines: { node: ">=18.0.0" }
 
   has-ansi@2.0.0:
     resolution:
@@ -13856,6 +13902,25 @@ packages:
       }
     engines: { node: ^10 || ^12 || >=14 }
 
+  posthog-js@1.177.0:
+    resolution:
+      {
+        integrity: sha512-0Qt3qTkyfsFW89bveqEzYhhX8YRNFAES9OqhzuxbvbHId/PSyxx/Pzgmgp+N5k45lon3ibwYRAbTlQ4yQacODQ==,
+      }
+
+  posthog-node@4.2.1:
+    resolution:
+      {
+        integrity: sha512-l+fsjYEkTik3m/G0pE7gMr4qBJP84LhK779oQm6MBzhBGpd4By4qieTW+4FUAlNCyzQTynn3Nhsa50c0IELSxQ==,
+      }
+    engines: { node: ">=15.0.0" }
+
+  preact@10.24.3:
+    resolution:
+      {
+        integrity: sha512-Z2dPnBnMUfyQfSQ+GBdsGa16hz35YmLmtTLhM169uW944hYL6xzTYkJjC07j+Wosz733pMWx0fgON3JNw1jJQA==,
+      }
+
   prebuild-install@7.1.2:
     resolution:
       {
@@ -14068,6 +14133,12 @@ packages:
     resolution:
       {
         integrity: sha512-y44MCkgtZUCT9tZGuE278fB7PWVf7fRYy0vbRXAts2o5F0EfC4fIQrvQQGBJo1WJbFcVLXzApOscyJuZqHQc1w==,
+      }
+
+  proxy-from-env@1.1.0:
+    resolution:
+      {
+        integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==,
       }
 
   proxy-memoize@3.0.1:
@@ -14835,6 +14906,12 @@ packages:
     resolution:
       {
         integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==,
+      }
+
+  rusha@0.8.14:
+    resolution:
+      {
+        integrity: sha512-cLgakCUf6PedEu15t8kbsjnwIFFR2D4RfL+W3iWFJ4iac7z4B0ZI8fxy4R3J956kAI68HclCFGL8MPoUVC3qVA==,
       }
 
   rw@1.3.3:
@@ -16895,6 +16972,12 @@ packages:
         integrity: sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==,
       }
 
+  web-vitals@4.2.4:
+    resolution:
+      {
+        integrity: sha512-r4DIlprAGwJ7YM11VZp4R884m0Vmgr6EAKe3P+kO0PPj3Unqyvv59rczf6UiGcb9Z8QxZVcqKNwv/g0WNdWwsw==,
+      }
+
   webfontloader@1.6.28:
     resolution:
       {
@@ -16970,6 +17053,13 @@ packages:
       {
         integrity: sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==,
       }
+
+  whatwg-mimetype@3.0.0:
+    resolution:
+      {
+        integrity: sha512-nt+N2dzIutVRxARx1nghPKGv1xHikU7HKdfafKkLNLindmPU/ch3U31NOCGGA/dmPcmb1VlofO0vnKAcsm0o/Q==,
+      }
+    engines: { node: ">=12" }
 
   whatwg-mimetype@4.0.0:
     resolution:
@@ -20106,11 +20196,11 @@ snapshots:
       "@storybook/global": 5.0.0
       storybook: 8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9))
 
-  "@storybook/addon-interactions@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))":
+  "@storybook/addon-interactions@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))":
     dependencies:
       "@storybook/global": 5.0.0
       "@storybook/instrumenter": 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))
-      "@storybook/test": 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))
+      "@storybook/test": 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))
       polished: 4.3.1
       storybook: 8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9))
       ts-dedent: 2.2.0
@@ -20298,7 +20388,7 @@ snapshots:
     dependencies:
       storybook: 8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9))
 
-  "@storybook/nextjs@8.2.6(esbuild@0.21.5)(next@15.0.1(@babel/core@7.24.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(type-fest@2.19.0)(typescript@5.5.4)(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))(webpack-hot-middleware@2.26.1)(webpack@5.95.0(esbuild@0.21.5))":
+  "@storybook/nextjs@8.2.6(esbuild@0.21.5)(next@15.0.1(@babel/core@7.24.9)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(type-fest@2.19.0)(typescript@5.5.4)(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))(webpack-hot-middleware@2.26.1)(webpack@5.95.0(esbuild@0.21.5))":
     dependencies:
       "@babel/core": 7.24.9
       "@babel/plugin-syntax-bigint": 7.8.3(@babel/core@7.24.9)
@@ -20317,7 +20407,7 @@ snapshots:
       "@storybook/builder-webpack5": 8.2.6(esbuild@0.21.5)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(typescript@5.5.4)
       "@storybook/preset-react-webpack": 8.2.6(esbuild@0.21.5)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(typescript@5.5.4)
       "@storybook/react": 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(typescript@5.5.4)
-      "@storybook/test": 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))
+      "@storybook/test": 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))
       "@types/node": 18.19.42
       "@types/semver": 7.5.8
       babel-loader: 9.1.3(@babel/core@7.24.9)(webpack@5.95.0(esbuild@0.21.5))
@@ -20451,12 +20541,12 @@ snapshots:
     optionalDependencies:
       typescript: 5.5.4
 
-  "@storybook/test@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))":
+  "@storybook/test@8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))":
     dependencies:
       "@storybook/csf": 0.1.11
       "@storybook/instrumenter": 8.2.6(storybook@8.2.6(@babel/preset-env@7.25.2(@babel/core@7.24.9)))
       "@testing-library/dom": 10.1.0
-      "@testing-library/jest-dom": 6.4.5(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))
+      "@testing-library/jest-dom": 6.4.5(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))
       "@testing-library/user-event": 14.5.2(@testing-library/dom@10.1.0)
       "@vitest/expect": 1.6.0
       "@vitest/spy": 1.6.0
@@ -20597,7 +20687,7 @@ snapshots:
       lz-string: 1.5.0
       pretty-format: 27.5.1
 
-  "@testing-library/jest-dom@6.4.5(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))":
+  "@testing-library/jest-dom@6.4.5(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))":
     dependencies:
       "@adobe/css-tools": 4.4.0
       "@babel/runtime": 7.25.0
@@ -20608,7 +20698,7 @@ snapshots:
       lodash: 4.17.21
       redent: 3.0.0
     optionalDependencies:
-      vitest: 2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3)
+      vitest: 2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3)
 
   "@testing-library/jest-dom@6.4.8":
     dependencies:
@@ -22119,7 +22209,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  "@vitest/coverage-v8@2.1.3(vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3))":
+  "@vitest/coverage-v8@2.1.3(vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3))":
     dependencies:
       "@ampproject/remapping": 2.3.0
       "@bcoe/v8-coverage": 0.2.3
@@ -22133,7 +22223,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3)
+      vitest: 2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3)
     transitivePeerDependencies:
       - supports-color
 
@@ -23496,6 +23586,14 @@ snapshots:
 
   axe-core@4.9.1: {}
 
+  axios@1.7.7:
+    dependencies:
+      follow-redirects: 1.15.9
+      form-data: 4.0.0
+      proxy-from-env: 1.1.0
+    transitivePeerDependencies:
+      - debug
+
   axobject-query@3.1.1:
     dependencies:
       deep-equal: 2.2.3
@@ -24084,6 +24182,8 @@ snapshots:
       browserslist: 4.23.2
 
   core-js-pure@3.37.1: {}
+
+  core-js@3.38.1: {}
 
   core-util-is@1.0.3: {}
 
@@ -25267,6 +25367,8 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  fflate@0.4.8: {}
+
   file-entry-cache@6.0.1:
     dependencies:
       flat-cache: 3.2.0
@@ -25377,6 +25479,8 @@ snapshots:
   focus-trap@7.6.0:
     dependencies:
       tabbable: 6.2.0
+
+  follow-redirects@1.15.9: {}
 
   for-each@0.3.3:
     dependencies:
@@ -25654,6 +25758,12 @@ snapshots:
       strip-bom-string: 1.0.0
 
   hachure-fill@0.5.2: {}
+
+  happy-dom@15.7.4:
+    dependencies:
+      entities: 4.5.0
+      webidl-conversions: 7.0.0
+      whatwg-mimetype: 3.0.0
 
   has-ansi@2.0.0:
     dependencies:
@@ -27827,6 +27937,22 @@ snapshots:
       picocolors: 1.0.1
       source-map-js: 1.2.0
 
+  posthog-js@1.177.0:
+    dependencies:
+      core-js: 3.38.1
+      fflate: 0.4.8
+      preact: 10.24.3
+      web-vitals: 4.2.4
+
+  posthog-node@4.2.1:
+    dependencies:
+      axios: 1.7.7
+      rusha: 0.8.14
+    transitivePeerDependencies:
+      - debug
+
+  preact@10.24.3: {}
+
   prebuild-install@7.1.2:
     dependencies:
       detect-libc: 2.0.3
@@ -27937,6 +28063,8 @@ snapshots:
   proxy-compare@2.6.0: {}
 
   proxy-compare@3.0.0: {}
+
+  proxy-from-env@1.1.0: {}
 
   proxy-memoize@3.0.1:
     dependencies:
@@ -28493,6 +28621,8 @@ snapshots:
   run-parallel@1.2.0:
     dependencies:
       queue-microtask: 1.2.3
+
+  rusha@0.8.14: {}
 
   rw@1.3.3: {}
 
@@ -29990,7 +30120,7 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.31.3
 
-  vitest@2.1.3(@types/node@20.14.12)(jsdom@24.1.1)(terser@5.31.3):
+  vitest@2.1.3(@types/node@20.14.12)(happy-dom@15.7.4)(jsdom@24.1.1)(terser@5.31.3):
     dependencies:
       "@vitest/expect": 2.1.3
       "@vitest/mocker": 2.1.3(@vitest/spy@2.1.3)(vite@5.4.10(@types/node@20.14.12)(terser@5.31.3))
@@ -30013,6 +30143,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       "@types/node": 20.14.12
+      happy-dom: 15.7.4
       jsdom: 24.1.1
     transitivePeerDependencies:
       - less
@@ -30073,6 +30204,8 @@ snapshots:
   wcwidth@1.0.1:
     dependencies:
       defaults: 1.0.4
+
+  web-vitals@4.2.4: {}
 
   webfontloader@1.6.28: {}
 
@@ -30135,6 +30268,8 @@ snapshots:
       iconv-lite: 0.6.3
 
   whatwg-fetch@3.6.20: {}
+
+  whatwg-mimetype@3.0.0: {}
 
   whatwg-mimetype@4.0.0: {}
 
