@@ -7,6 +7,7 @@
     "build": "tinacms build && next build",
     "start": "next start",
     "lint": "lint-staged",
+    "lint:js": "eslint --fix './src/**/*.{js,jsx,ts,tsx}'",
     "lint:css": "stylelint '**/*.{css,scss}' --fix",
     "lint:format": "prettier --write '**/*.{js,jsx,ts,tsx,css,scss}'",
     "test": "vitest --no-watch",
