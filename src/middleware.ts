@@ -4,15 +4,19 @@ import { NextResponse } from "next/server";
 import PostHogClient from "./app/posthog";
 
 async function isMaintenanceMode() {
-  let flags = undefined;
+  try {
+    let flags = undefined;
 
-  const posthog = PostHogClient();
-  flags = await posthog.getAllFlags(
-    "user_distinct_id", // replace with a user's distinct ID
-  );
-  await posthog.shutdown();
+    const posthog = PostHogClient();
+    flags = await posthog.getAllFlags(
+      "user_distinct_id", // replace with a user's distinct ID
+    );
+    await posthog.shutdown();
 
-  return flags["maintenance_mode"];
+    return flags["maintenance_mode"];
+  } catch (error) {
+    return console.log("Error getting flags", error);
+  }
 }
 
 export async function middleware(request: NextRequest) {
@@ -28,6 +32,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|maintenance).*)",
   ],
 };
