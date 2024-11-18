@@ -27,6 +27,10 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL("/maintenance", request.url));
   }
 
+  if (request.nextUrl.pathname === "/admin") {
+    return NextResponse.redirect(new URL("/admin/index.html", request.url));
+  }
+
   return NextResponse.next();
 }
 
