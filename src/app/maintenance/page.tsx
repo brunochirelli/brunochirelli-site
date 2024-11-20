@@ -1,3 +1,3 @@
 export default function MaintenancePage() {
-  return <>Estamos em manutenção</>;
+  return <div>Estamos em manutenção</div>;
 }

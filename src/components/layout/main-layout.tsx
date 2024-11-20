@@ -1,11 +1,9 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { type ReactNode, Suspense } from "react";
 
-import { Box, Tabs } from "@chakra-ui/react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-
-import Intro from "@/components/intro";
 
 type MainLayoutProps = {
   children: ReactNode;
@@ -22,31 +20,17 @@ export default function MainLayout({ children }: MainLayoutProps) {
   ];
 
   return (
-    <Box justifyItems={"center"}>
-      <Box as={"header"} justifyItems={"center"}>
-        <Intro />
-      </Box>
-      <Tabs.Root defaultValue={pathname} w={"full"}>
-        <Tabs.List
-          alignItems={"center"}
-          display={"flex"}
-          justifyContent={"center"}
-          mx={"auto"}
-        >
-          {tabItems.map(({ key, label }) => (
-            <Tabs.Trigger
-              key={key}
-              p={2}
-              value={key}
-              onClick={() => router.push(key)}
-            >
-              {label}
-            </Tabs.Trigger>
+    <div>
+      <header>
+        <nav>
+          {tabItems.map((tab) => (
+            <Link key={tab.key} href={tab.key}>
+              {tab.label}
+            </Link>
           ))}
-        </Tabs.List>
-
-        <Tabs.Content value={pathname ?? ""}>{children}</Tabs.Content>
-      </Tabs.Root>
-    </Box>
+        </nav>
+      </header>
+      <main>{children}</main>
+    </div>
   );
 }
